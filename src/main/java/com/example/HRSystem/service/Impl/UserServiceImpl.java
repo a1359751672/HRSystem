@@ -5,6 +5,7 @@ import com.example.HRSystem.common.Constant;
 import com.example.HRSystem.entity.User;
 import com.example.HRSystem.service.IUserService;
 import com.example.HRSystem.service.ex.InsertException;
+import com.example.HRSystem.service.ex.LoginException;
 import com.example.HRSystem.service.ex.UpdateException;
 import com.example.HRSystem.service.ex.UserExistException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ public class UserServiceImpl implements IUserService {
     @Autowired
     UserMapper mapper;
 
+//    注册用户
     @Override
     public void regist(User user) {
         //        判断user是否为空
@@ -67,6 +69,46 @@ public class UserServiceImpl implements IUserService {
         if (row !=1){
             throw new InsertException("注册异常：添加用户信息失败");
         }
+    }
+
+    //    用户登录
+    @Override
+    public User login(String username, String password) {
+        //        参数验证
+        if (StringUtils.isEmpty(username)){
+            throw new UpdateException("登录异常：用户名为空");
+        }
+        if (StringUtils.isEmpty(password)){
+            throw new UpdateException("登陆异常：密码为空");
+        }
+//        验证用户是否存在
+        User u = null;
+        try {
+            u = mapper.getByName(username);
+        }catch (Exception e){
+            e.printStackTrace();
+            throw new InsertException("登录异常：用户名查询失败"+e.getMessage(),e);
+        }
+        if (u==null){
+            throw new InsertException("登录异常：用户名不存在");
+        }
+        System.out.println(u);
+//        获取查询到的用户盐值
+        String salt = u.getSalt();
+
+//        对输入的密码进行加密
+        String md5Password = getMD5Password(password, salt ,Constant.MD5_HASH_TIME);
+//        比对密码
+        if (!md5Password.equals(u.getPassword())){
+            throw new LoginException("登录异常：密码错误");
+        }
+//        判断用户是否被删除
+        System.out.println(u.getIsDelete());
+        if (u.getIsDelete().equals(Constant.IS_DELETE)){
+            throw new LoginException("登录异常：用户已被删除");
+        }
+        System.out.println("业务层用户登录成功！");
+        return u;
     }
 
     //    对密码进行加密

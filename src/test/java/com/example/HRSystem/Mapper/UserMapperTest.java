@@ -25,7 +25,7 @@ class UserMapperTest {
 
     @Test
     void getByName() {
-        User admin = mapper.getByName("Admin");
+        User admin = mapper.getByName("123");
         System.out.println(admin);
     }
 }

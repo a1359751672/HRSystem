@@ -16,7 +16,7 @@ public class User {
     private Date createdTime;
     private String modifiedUser;
     private Date modifiedTime;
-    private boolean isAdmin;
+
 
     public User() {
     }
@@ -35,7 +35,7 @@ public class User {
         this.createdTime = createdTime;
         this.modifiedUser = modifiedUser;
         this.modifiedTime = modifiedTime;
-        this.isAdmin = isAdmin;
+
     }
 
     @Override
@@ -54,7 +54,6 @@ public class User {
                 ", createdTime=" + createdTime +
                 ", modifiedUser='" + modifiedUser + '\'' +
                 ", modifiedTime=" + modifiedTime +
-                ", isAdmin=" + isAdmin +
                 '}';
     }
 
@@ -162,11 +161,4 @@ public class User {
         this.modifiedTime = modifiedTime;
     }
 
-    public boolean isAdmin() {
-        return isAdmin;
-    }
-
-    public void setAdmin(boolean admin) {
-        isAdmin = admin;
-    }
 }
