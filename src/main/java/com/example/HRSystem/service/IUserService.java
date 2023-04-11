@@ -8,4 +8,6 @@ public interface IUserService {
 
     //    用户登录
     User login(String username, String password);
+    //     修改个人信息
+    Integer changeUserInfo(String username,User user);
 }

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.HRSystem.Mapper.MeritsMapper">
+    <resultMap id="meritsMap" type="com.example.HRSystem.entity.Merits">
+        <id column="id" property="id" />
+        <result column="mdate" property="mdate"/>
+        <result column="name" property="name"/>
+        <result column="jnum" property="jnum"/>
+        <result column="dept_id" property="deptId"/>
+        <result column="att" property="att"/>
+        <result column="manner" property="manner"/>
+        <result column="abi" property="abi"/>
+        <result column="score" property="score"/>
+        <result column="assess" property="assess"/>
+
+    </resultMap>
+<!--    插入绩效信息-->
+    <insert id="insertMerits">
+        insert into h_merits(name,jnum,dept_id,att,manner,abi,score,assess,mdate)
+        values(#{name},#{jnum},#{deptId},#{att},#{manner},#{abi},#{score},#{assess},now());
+    </insert>
+    <!--    基于用户id和部门id查询绩效记录-->
+    <select id="getByUidAndDid" resultMap="meritsMap">
+        select * from h_merits where id=#{id} dept_id=#{id1};
+    </select>
+    <!--    基于部门id查询部门信息-->
+    <select id="deptByid" resultType="com.example.HRSystem.entity.Dept">
+        select  t1.dept_name = t2.name
+        from
+        h_merits t1
+        join
+        h_dept t2
+        on t1.dept_id=t2.id
+        where
+        t1.dept_id=#{Did};
+    </select>
+</mapper>
