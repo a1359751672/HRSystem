@@ -16,12 +16,14 @@ public class User {
     private Date createdTime;
     private String modifiedUser;
     private Date modifiedTime;
-
+    private Integer role;
+    private String name;
+    private Integer age;
 
     public User() {
     }
 
-    public User(Integer id, String username, String password, String salt, Integer isDelete, String phone, String email, Integer gender, String avatar, String createdUser, Date createdTime, String modifiedUser, Date modifiedTime, boolean isAdmin) {
+    public User(Integer id, String username, String password, String salt, Integer isDelete, String phone, String email, Integer gender, String avatar, String createdUser, Date createdTime, String modifiedUser, Date modifiedTime, Integer role, String name, Integer age) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -35,7 +37,9 @@ public class User {
         this.createdTime = createdTime;
         this.modifiedUser = modifiedUser;
         this.modifiedTime = modifiedTime;
-
+        this.role = role;
+        this.name = name;
+        this.age = age;
     }
 
     @Override
@@ -54,7 +58,26 @@ public class User {
                 ", createdTime=" + createdTime +
                 ", modifiedUser='" + modifiedUser + '\'' +
                 ", modifiedTime=" + modifiedTime +
+                ", role=" + role +
+                ", name='" + name + '\'' +
+                ", age=" + age +
                 '}';
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
     public Integer getId() {
@@ -161,4 +184,11 @@ public class User {
         this.modifiedTime = modifiedTime;
     }
 
+    public Integer getRole() {
+        return role;
+    }
+
+    public void setRole(Integer role) {
+        this.role = role;
+    }
 }

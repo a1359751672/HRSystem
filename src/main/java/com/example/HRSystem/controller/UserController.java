@@ -16,18 +16,24 @@ public class UserController {
     @Autowired
     IUserService service;
 
+
     //注册用户信息
     @RequestMapping("/regist")
     public JsonResult<Void> regist(User user){
         service.regist(user);
         return new JsonResult<>(1000,"OK");
     }
+
     //    用户登录
     @RequestMapping("/login")
-    public JsonResult<Void> login(String username, String password, HttpServletRequest req){
+    public JsonResult<String> login(String username, String password, HttpServletRequest req){
         User user = service.login(username, password);
         HttpSession session = req.getSession();
         session.setAttribute("user",user);
-        return JsonResult.getSuccessJR();
+        if (user.getRole()==0){
+            return JsonResult.getSuccessJR("用户登录");
+        }else {
+            return JsonResult.getSuccessJR("管理员登录");
+        }
     }
 }

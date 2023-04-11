@@ -17,10 +17,13 @@
         <result column="modified_user" property="modifiedUser" />
         <result column="modified_time" property="modifiedTime" />
         <result column="is_delete" property="isDelete"/>
+        <result column="role" property="role"/>
+        <result column="name" property="name"/>
+        <result column="age" property="age"/>
     </resultMap>
     <insert id="insertUser">
-        insert into h_user(username,password,salt,is_delete,phone,email,gender,avatar,created_user,created_time,modified_user,modified_time)
-        values(#{username},#{password},#{salt},#{isDelete},#{phone},#{email},#{gender},#{avatar},#{createdUser},now(),#{modifiedUser},now());
+        insert into h_user(username,name,age,password,salt,is_delete,phone,email,gender,avatar,created_user,created_time,modified_user,modified_time,role)
+        values(#{username},#{name},#{age},#{password},#{salt},#{isDelete},#{phone},#{email},#{gender},#{avatar},#{createdUser},now(),#{modifiedUser},now(),0);
     </insert>
     <!--    基于用户名查询用户信息-->
     <select id="getByName" resultMap="userMap">

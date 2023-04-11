@@ -13,7 +13,6 @@ class IUserServiceTest {
         user.setId(1);
         user.setUsername("Admin");
         user.setPassword("Admin");
-        user.setAdmin(true);
         user.setCreatedUser("Admin");
         System.out.println(user);
     }

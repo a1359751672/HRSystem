@@ -15,17 +15,18 @@ class UserMapperTest {
 
     @Test
     void insertUser() {
-        User user = new User();
-        user.setUsername("Admin");
-        user.setPassword("Admin");
-        user.setAdmin(true);
-        user.setCreatedUser("Admin");
-        System.out.println(user);
+
     }
 
     @Test
     void getByName() {
-        User admin = mapper.getByName("123");
+        User admin = mapper.getByName("123456");
+        System.out.println(admin);
+    }
+
+    @Test
+    void testGetByName() {
+        User admin = mapper.getByName("123456");
         System.out.println(admin);
     }
 }

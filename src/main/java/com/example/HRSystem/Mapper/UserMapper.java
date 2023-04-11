@@ -2,6 +2,7 @@ package com.example.HRSystem.Mapper;
 
 import com.example.HRSystem.entity.User;
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Mapper
 public interface UserMapper {

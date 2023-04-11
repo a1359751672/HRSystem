@@ -20,7 +20,7 @@ public class UserServiceImpl implements IUserService {
     @Autowired
     UserMapper mapper;
 
-//    注册用户
+    //    注册功能
     @Override
     public void regist(User user) {
         //        判断user是否为空
@@ -95,9 +95,8 @@ public class UserServiceImpl implements IUserService {
         System.out.println(u);
 //        获取查询到的用户盐值
         String salt = u.getSalt();
-
 //        对输入的密码进行加密
-        String md5Password = getMD5Password(password, salt ,Constant.MD5_HASH_TIME);
+        String md5Password = getMD5Password(password, salt, Constant.MD5_HASH_TIME);
 //        比对密码
         if (!md5Password.equals(u.getPassword())){
             throw new LoginException("登录异常：密码错误");
@@ -110,6 +109,7 @@ public class UserServiceImpl implements IUserService {
         System.out.println("业务层用户登录成功！");
         return u;
     }
+
 
     //    对密码进行加密
     /*

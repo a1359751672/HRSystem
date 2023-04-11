@@ -1,4 +1,5 @@
 var regUrl="/users/regist"
+
 $(function () {
     //    为用户名输入框添加失去焦点事件
     $("#username").blur(function (){

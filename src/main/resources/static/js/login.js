@@ -29,12 +29,18 @@ $(function (){
         $.post(LoginUrl,params,function (result) {
             //    处理相应数据
             if (result.state == 1000){ //相应成功状态
-                alert("登陆成功，点击跳转至主页");
-                window.location.href="index.html";
+                if (result.data=="用户登录"){
+                    alert("登陆成功，点击跳转至主页");
+                    window.location.href="index.html";
+                }else if (result.data=="管理员登录"){
+                    alert("登陆成功，点击跳转至管理员页面");
+                    window.location.href="admin.html";
+                }
             }else{
                 alert(result.msg);
             }
         })
+
     })
 })
 //    定义验证是否为空方法
@@ -70,3 +76,4 @@ function checkLength(name,minLength,maxLength){
         return true;
     }
 }
+
