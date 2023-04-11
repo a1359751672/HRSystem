@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 import org.springframework.util.StringUtils;
 
+import java.util.Date;
 import java.util.UUID;
 
 @Service
@@ -109,6 +110,30 @@ public class UserServiceImpl implements IUserService {
         System.out.println("业务层用户登录成功！");
         return u;
     }
+
+    //    修改个人信息
+    @Override
+    public Integer changeUserInfo(String username, User user) {
+//        根据用户名查询用户信息并判断用户是否存在
+        User u = mapper.getByName(username);
+        if (user == null){
+            throw new UpdateException("修改异常：用户不存在（登录已失效）");
+        }
+//        判断用户是否被标记已删除
+        if (u.getIsDelete().equals(Constant.IS_DELETE)){
+            throw new UpdateException("修改异常：该用户已被禁用");
+        }
+//        修改密码
+        user.setId(u.getId());
+        user.setModifiedUser(u.getModifiedUser());
+        user.setModifiedTime(new Date());
+        Integer row = mapper.updataUserInfo(user);
+        if (row!=1){
+            throw new UpdateException("修改异常：修改失败");
+        }
+        return null;
+    }
+
 
 
     //    对密码进行加密

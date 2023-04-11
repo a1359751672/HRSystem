@@ -10,4 +10,7 @@ public interface UserMapper {
     Integer insertUser(User user);
     //    根据用户名查询用户信息
     User getByName(String username);
+
+    //    登录账号时，修改个人信息
+    Integer updataUserInfo(User user);
 }

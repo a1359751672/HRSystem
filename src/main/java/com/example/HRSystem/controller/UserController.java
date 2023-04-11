@@ -1,5 +1,6 @@
 package com.example.HRSystem.controller;
 
+import com.example.HRSystem.common.Constant;
 import com.example.HRSystem.entity.JsonResult;
 import com.example.HRSystem.entity.User;
 import com.example.HRSystem.service.IUserService;
@@ -35,5 +36,29 @@ public class UserController {
         }else {
             return JsonResult.getSuccessJR("管理员登录");
         }
+    }
+
+    //        修改个人信息
+    @RequestMapping("/changeUserInfo")
+    public JsonResult<User> changeUserInfo(User user,HttpSession session){
+        User u = (User) session.getAttribute("user");
+        if (u==null){
+            return new JsonResult<>(2005,"登录已失效");
+        }
+        user.setId(u.getId());
+        user.setModifiedUser(u.getModifiedUser());
+        service.changeUserInfo(u.getUsername(),user);
+        return JsonResult.getSuccessJR(u);
+    }
+    @RequestMapping("/findUserInfo")
+    public JsonResult<User> findUserInfo(HttpServletRequest req){
+//        获取用户对应的session对象，如果不存在则不创建新的session对象
+        HttpSession session = req.getSession(false);
+//        未登录
+        if (session == null||session.getAttribute("user")==null){
+            return Constant.JR_NOT_LOGGEDIN;
+        }
+        User user = (User) session.getAttribute("user");
+        return JsonResult.getSuccessJR(user);
     }
 }
