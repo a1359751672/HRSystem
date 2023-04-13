@@ -8,10 +8,10 @@ private String name;
 private Integer userId;
 private String dept;
 private Integer askid;
-private String saktype;
-private Integer sakdate;
-private Date askstart;
-private Date askend;
+private String asktype;
+private Integer askdate;
+private String askstart;
+private String askend;
 private String askreason;
 private String isCheck;
 private String checkBack;
@@ -60,35 +60,35 @@ private Date modifiedTime;
         this.askid = askid;
     }
 
-    public String getSaktype() {
-        return saktype;
+    public String getAsktype() {
+        return asktype;
     }
 
-    public void setSaktype(String saktype) {
-        this.saktype = saktype;
+    public void setAsktype(String asktype) {
+        this.asktype = asktype;
     }
 
-    public Integer getSakdate() {
-        return sakdate;
+    public Integer getAskdate() {
+        return askdate;
     }
 
-    public void setSakdate(Integer sakdate) {
-        this.sakdate = sakdate;
+    public void setAskdate(Integer askdate) {
+        this.askdate = askdate;
     }
 
-    public Date getAskstart() {
+    public String getAskstart() {
         return askstart;
     }
 
-    public void setAskstart(Date askstart) {
+    public void setAskstart(String askstart) {
         this.askstart = askstart;
     }
 
-    public Date getAskend() {
+    public String getAskend() {
         return askend;
     }
 
-    public void setAskend(Date askend) {
+    public void setAskend(String askend) {
         this.askend = askend;
     }
 
@@ -150,16 +150,16 @@ private Date modifiedTime;
 
     @Override
     public String toString() {
-        return "ask{" +
+        return "Ask{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", userId=" + userId +
                 ", dept='" + dept + '\'' +
                 ", askid=" + askid +
-                ", saktype='" + saktype + '\'' +
-                ", sakdate=" + sakdate +
-                ", askstart=" + askstart +
-                ", askend=" + askend +
+                ", asktype='" + asktype + '\'' +
+                ", askdate=" + askdate +
+                ", askstart='" + askstart + '\'' +
+                ", askend='" + askend + '\'' +
                 ", askreason='" + askreason + '\'' +
                 ", isCheck='" + isCheck + '\'' +
                 ", checkBack='" + checkBack + '\'' +
