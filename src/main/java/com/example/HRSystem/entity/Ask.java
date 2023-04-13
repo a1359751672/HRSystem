@@ -2,7 +2,7 @@ package com.example.HRSystem.entity;
 
 import java.util.Date;
 
-public class ask {
+public class Ask {
 private Integer id;
 private String name;
 private Integer userId;
