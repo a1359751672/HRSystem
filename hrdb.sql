@@ -40,12 +40,12 @@ CREATE TABLE `h_ask` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-insert into t_ask
+insert into h_ask
 (id,name,user_id,dept,askid,asktype,askdate,askstart,askend,askreason,is_check,
 check_back,created_user,created_time,modified_user,modified_time)
-values(null,"小路",250,"组织部",14354,"事假",
+values(1,"小路",250,"组织部",14354,"事假",
 2,"2000-01-02","2000-01-04","有事","未审核","无",
-"经理",new Date(),"经理",new Date());
+"经理","2022-08-09","经理","2022-08-09");
 /*Data for the table `h_ask` */
 
 /*Table structure for table `h_dept` */

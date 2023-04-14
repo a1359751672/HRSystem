@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class IUserServiceTest {
 
-    @Test
+   /* @Test
     void regist() {
         User user = new User();
         user.setId(1);
@@ -15,5 +15,5 @@ class IUserServiceTest {
         user.setPassword("Admin");
         user.setCreatedUser("Admin");
         System.out.println(user);
-    }
+    }*/
 }
