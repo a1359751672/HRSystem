@@ -1,9 +1,10 @@
 package com.example.HRSystem.Mapper;
 
 import com.example.HRSystem.entity.Ask;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
-
+@Mapper
 public interface AskMapper {
     //   查询用户已有请假的条数；
     Integer countByUserId(Integer userId);

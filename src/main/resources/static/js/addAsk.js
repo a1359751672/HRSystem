@@ -1,28 +1,10 @@
 //页面加载时间获取
 $(function (){
-    var defaultOption="<option value='0'>---请选择---</option>>"
-//    为三个<select>添加默认选项
-    $("#province-list").append(defaultOption);
-    $("#city-list").append(defaultOption);
-    $("#area-list").append(defaultOption);
-//    自动加载省级列表
-    appendList(86,"province")
-//
-    $("#province-list").change(function (){
-        var code =$("#province-list").val()//自动加载省级编号
-        appendList(code,"city-list")//自动加载市级编号
-
-    })
-    $("#city-list").change(function (){
-        var code =$("#city-list").val()//自动加载市级编号
-        appendList(code,"area-list")//自动加载区级编号
-
-    })
     //为提交按钮添加点击事件
     $("#btnSubmit").click(function (){
         console.log(new FormData($("#addAddressFrom")[0]))
         $.ajax({
-            "url":"/addresses/createAddress",
+            "url":"/ask/createAsk",
             "data":$("#addAddressFrom").serialize(),
             "type":"post",
             "dataType":"json",
