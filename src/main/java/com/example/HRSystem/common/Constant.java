@@ -11,4 +11,6 @@ public class Constant {
     public static final int  IS_NOT_DELETE = 0; //标记数据未被删除
     public static final int  IS_DELETE = 1; //标记数据已被删除
     public static final JsonResult<User> JR_NOT_LOGGEDIN = new JsonResult<>(2004,"未登录");
+
+    public static final int MAX_ADDRESS = 100;
 }

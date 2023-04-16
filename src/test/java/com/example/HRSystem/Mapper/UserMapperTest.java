@@ -13,10 +13,10 @@ class UserMapperTest {
     @Autowired
     UserMapper mapper;
 
-    @Test
+   /* @Test
     void insertUser() {
 
-    }
+    }*/
 
     @Test
     void getByName() {

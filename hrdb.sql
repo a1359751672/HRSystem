@@ -26,10 +26,10 @@ CREATE TABLE `h_ask` (
   `user_id` int DEFAULT NULL COMMENT '工号',
   `dept` varchar(20) DEFAULT NULL COMMENT '部门',
   `askid` int DEFAULT NULL COMMENT '请假单号',
-  `saktype` varchar(20) DEFAULT NULL COMMENT '请假类型',
-  `sakdate` int DEFAULT NULL COMMENT '请假天数',
-  `askstart` date DEFAULT NULL COMMENT '请假开始时间',
-  `askend` date DEFAULT NULL COMMENT '请假结束时间',
+  `asktype` varchar(20) DEFAULT NULL COMMENT '请假类型',
+  `askdate` int DEFAULT NULL COMMENT '请假天数',
+  `askstart` varchar(20) DEFAULT NULL COMMENT '请假开始时间',
+  `askend` varchar(20) DEFAULT NULL COMMENT '请假结束时间',
   `askreason` varchar(20) DEFAULT NULL COMMENT '请假理由',
   `is_check` varchar(20) DEFAULT NULL COMMENT '是否审核',
   `check_back` varchar(50) DEFAULT NULL COMMENT '审核回复',
@@ -40,6 +40,12 @@ CREATE TABLE `h_ask` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+insert into h_ask
+(id,name,user_id,dept,askid,asktype,askdate,askstart,askend,askreason,is_check,
+check_back,created_user,created_time,modified_user,modified_time)
+values(1,"小路",250,"组织部",14354,"事假",
+2,"2000-01-02","2000-01-04","有事","未审核","无",
+"经理","2022-08-09","经理","2022-08-09");
 /*Data for the table `h_ask` */
 
 /*Table structure for table `h_dept` */
