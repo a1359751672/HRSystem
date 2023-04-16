@@ -11,9 +11,6 @@ public class Merits {
     private Integer manner;
     private Integer abi;
     private Date mdate;
-    private String deptName;
-    private Integer score;
-    private String assess;
 
     public Merits() {
     }
@@ -27,9 +24,7 @@ public class Merits {
         this.manner = manner;
         this.abi = abi;
         this.mdate = mdate;
-        this.deptName = deptName;
-        this.score = score;
-        this.assess = assess;
+
     }
 
     @Override
@@ -43,9 +38,6 @@ public class Merits {
                 ", manner=" + manner +
                 ", abi=" + abi +
                 ", mdate=" + mdate +
-                ", deptName='" + deptName + '\'' +
-                ", score=" + score +
-                ", assess='" + assess + '\'' +
                 '}';
     }
 
@@ -113,27 +105,4 @@ public class Merits {
         this.mdate = mdate;
     }
 
-    public String getDeptName() {
-        return deptName;
-    }
-
-    public void setDeptName(String deptName) {
-        this.deptName = deptName;
-    }
-
-    public Integer getScore() {
-        return score;
-    }
-
-    public void setScore(Integer score) {
-        this.score = score;
-    }
-
-    public String getAssess() {
-        return assess;
-    }
-
-    public void setAssess(String assess) {
-        this.assess = assess;
-    }
 }

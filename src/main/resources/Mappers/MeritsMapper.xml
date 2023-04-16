@@ -18,22 +18,27 @@
     </resultMap>
 <!--    插入绩效信息-->
     <insert id="insertMerits">
-        insert into h_merits(name,jnum,dept_id,att,manner,abi,score,assess,mdate)
-        values(#{name},#{jnum},#{deptId},#{att},#{manner},#{abi},#{score},#{assess},now());
+        insert into h_merits(name,jnum,dept_id,att,manner,abi,mdate)
+        values(#{name},#{jnum},#{deptId},#{att},#{manner},#{abi},#{mdate});
     </insert>
     <!--    基于用户id和部门id查询绩效记录-->
     <select id="getByUidAndDid" resultMap="meritsMap">
-        select * from h_merits where id=#{id} dept_id=#{id1};
+        select * from h_merits where id=#{arg0} and dept_id=#{arg1};
     </select>
     <!--    基于部门id查询部门信息-->
     <select id="deptByid" resultType="com.example.HRSystem.entity.Dept">
-        select  t1.dept_name = t2.name
+        select  t2.name
         from
         h_merits t1
         join
         h_dept t2
-        on t1.dept_id=t2.id
+        on t2.id=t1.id
         where
         t1.dept_id=#{Did};
     </select>
+    <!--    修改绩效-->
+    <update id="UpdateById">
+        update h_merits set att=#{att},manner=#{manner},abi=#{abi},mdate=#{mdate}
+        where id=#{id};
+    </update>
 </mapper>
