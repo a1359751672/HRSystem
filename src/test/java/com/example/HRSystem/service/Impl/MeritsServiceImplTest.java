@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Date;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -27,5 +28,11 @@ class MeritsServiceImplTest {
 
     @Test
     void testCreatedMerits() {
+    }
+
+    @Test
+    void findMeritsList() {
+        List<Merits> m = service.findMeritsList("123456789");
+        System.out.println(m);
     }
 }

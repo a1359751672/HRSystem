@@ -1,39 +1,66 @@
-var meritsUrl="/merits/create"
+var template = "<tr>" +
+    "<td>[mdate]</td>" +
+    "<td>[name]</td>" +
+    "<td>[jnum]</td>" +
+    "<td>[dept_id]</td>" +
+    "<td>[att]</td>" +
+    "<td>[manner]</td>" +
+    "<td>[abi]</td>" +
+    // "<td><a aid='[aid]'  id='modifiedContent' href='addmerits.html?id=[aid]' class='btn btn-xs btn-info'><span class='fa fa-edit'></span> 修改</a></td>" +
+    // "<td><a aid='[aid]' class='btn btn-xs add-del btn-info btn-delete'><span class='fa fa-trash-o'></span> 删除</a></td>" +
+    // "<td><a aid='[aid]' class='btn btn-xs add-def btn-default'>设为默认</a></td>" +
+    "</tr>"
+var meritsLis = "/merits/list"
 
-$(function () {
-    //为提交按钮添加点击事件
-    $("#btn-merits").click(function (){
-        //    获取表单数据
-        var mdate = new Date($("#mdate").val());
-        var jnum =$("#jnum").val();
-        var deptId = $("#dept_id").val();
-        var att =$("#att").val();
-        var manner =$("#manner").val();
-        var abi =$("#abi").val();
+$(function (){
+    listMerits();
+})
 
-// //    判断页面中的input是否都进行了验证
-//         var divArr = $("div.has-success");
-//         if (divArr.length != 3){
-//             return;
-//         }
-        //    提交表单
-        var params = { //提交参数，请求参数属性名=属性值（属性名需和后端一致）
-            mdate:mdate,
-            jnum:jnum,
-            deptId:deptId,
-            att:att,
-            manner:manner,
-            abi:abi,
-        }
-        //    发送AJAX请求
-        $.post(meritsUrl,params,function (result) {
-            //    处理相应数据
-            if (result.state == 1000){ //相应成功状态
-                    alert("修改考勤成功");
-                }else{
-                    alert(result.msg);
+//查询用户地址信息
+function listMerits() {
+    $.get(meritsLis, function (result) {
+        if (result.state == 1000) {
+            for (var index in result.data) {
+                var addr = result.data[index]
+                var td = template.replace("[mdate]", addr.mdate)
+                    .replace("[name]", addr.name)
+                    .replace("[jnum]", addr.jnum)
+                    .replace("[dept_id]", addr.dept_id)
+                    .replace("[att]", addr.att)
+                    .replace("[manner]", addr.manner)
+                    .replace("[abi]", addr.abi)
+                    // .replace(/\[aid\]/g, addr.id)
+                var tobj = $(td)
+                var btnDefault = tobj.find(".btn-default")
+                if (addr.isDefault == 1) {
+                    btnDefault.remove()
                 }
+                $("#tbody").append(tobj)
+            }
+        } else {
+            alert(result.msg)
+        }
+        //为删除按钮添加点击事件
+        $(".btn-delete").bind("click", function () {
+            var flag = confirm("确定要删除此地址吗?")
+            if (flag == false) {
+                return
+            }
+//    获取地址id
+            var id = $(this).attr("aid");
+            params = {
+                id: id,
+            }
+//    发送请求
+//             $.post(deleteUrl, params, function (result) {
+//                 if (result.state == 1000) {
+//                     alert("删除成功")
+//                     window.location.reload();
+//                 } else {
+//                     alert(result.msg)
+//                 }
+//             })
         })
 
     })
-})
+}
