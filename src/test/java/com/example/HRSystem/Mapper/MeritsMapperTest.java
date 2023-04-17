@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.Date;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
@@ -16,31 +18,33 @@ class MeritsMapperTest {
     @Test
     void insertMerits() {
         Merits m = new Merits();
-        m.setId(1);
-        m.setName("萨达");
+        m.setId(null);
+        m.setName("第一次测试");
         m.setJnum(123);
         m.setDeptId(1);
         m.setAtt(50);
         m.setManner(20);
         m.setAbi(30);
-        System.out.println(m);
+        Integer row = mapper.insertMerits(m);
+        System.out.println(row);
     }
 
     @Test
     void deptByid() {
-        String s = mapper.deptByid(1);
+       Dept s = mapper.deptByid(1);
         System.out.println(s);
     }
 
     @Test
     void getByUidAndDid() {
-        Merits b = mapper.getByUidAndDid(1, 1);
+        Merits b = mapper.getByUidAndDid(1,1);
         System.out.println(b);
     }
 
     @Test
-    void testGetByUidAndDid() {
-        Merits a = mapper.getByUidAndDid(1, 1);
-        System.out.println(a);
+    void updateById() {
+        Merits merits = new Merits(12,null,null,null,10,10,10,new Date(),null,null,null);
+        Integer o = mapper.UpdateById(merits);
+        System.out.println("更新成功"+o);
     }
 }
