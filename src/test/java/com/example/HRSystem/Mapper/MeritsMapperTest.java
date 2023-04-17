@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Date;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -46,5 +47,11 @@ class MeritsMapperTest {
         Merits merits = new Merits(12,null,null,null,10,10,10,new Date(),null,null,null);
         Integer o = mapper.UpdateById(merits);
         System.out.println("更新成功"+o);
+    }
+
+    @Test
+    void getMeritsByUserId() {
+        List<Merits> m = mapper.getMeritsByUserId();
+        System.out.println(m);
     }
 }

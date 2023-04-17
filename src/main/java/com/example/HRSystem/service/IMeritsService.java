@@ -2,10 +2,10 @@ package com.example.HRSystem.service;
 
 import com.example.HRSystem.entity.Merits;
 
-public interface IMeritsService {
-    //    添加一条考勤记录
-//    void createdMerits(Integer id,Integer dept_id, Integer jnum, Integer att, Integer manner,Integer abi,String username);
+import java.util.List;
 
-    //    添加一条购物车记录
+public interface IMeritsService {
     void createdMerits(String username, Merits merits);
+    List<Merits> findMeritsList(String username);
+
 }

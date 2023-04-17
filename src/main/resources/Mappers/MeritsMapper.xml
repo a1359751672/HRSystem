@@ -41,4 +41,8 @@
         update h_merits set att=#{att},manner=#{manner},abi=#{abi},mdate=#{mdate}
         where id=#{id};
     </update>
+    <!--    管理员查询绩效信息-->
+    <select id="getMeritsByUserId" resultMap="meritsMap">
+        select * from h_merits ;
+    </select>
 </mapper>
