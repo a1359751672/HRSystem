@@ -22,7 +22,7 @@ class MeritsServiceImplTest {
 
     @Test
     void createdMerits() {
-        Merits merits = new Merits(null,null,123456,1,6,6,6,new Date(2023,5,1),null,null,null);
+        Merits merits = new Merits(12,null,null,null,10,10,10,new Date(),4,null);
         service.createdMerits("123456789",merits);
     }
 

@@ -4,6 +4,8 @@ import com.example.HRSystem.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 @Mapper
 public interface UserMapper {
     //添加用户信息
@@ -13,4 +15,7 @@ public interface UserMapper {
 
     //    登录账号时，修改个人信息
     Integer updataUserInfo(User user);
+
+//    管理员查找所有用户信息
+    List<User> getByAdmin();
 }

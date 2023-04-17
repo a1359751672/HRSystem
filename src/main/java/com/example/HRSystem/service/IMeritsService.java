@@ -7,5 +7,4 @@ import java.util.List;
 public interface IMeritsService {
     void createdMerits(String username, Merits merits);
     List<Merits> findMeritsList(String username);
-
 }

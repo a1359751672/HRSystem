@@ -1,5 +1,6 @@
 package com.example.HRSystem.entity;
 
+import java.math.BigInteger;
 import java.util.Date;
 
 public class User {
@@ -19,11 +20,17 @@ public class User {
     private Integer role;
     private String name;
     private Integer age;
+    private String nation;
+    private BigInteger card;
+    private String education;
+    private Integer jnum;
+    private Integer deptId;
+    private String deptName;
 
     public User() {
     }
 
-    public User(Integer id, String username, String password, String salt, Integer isDelete, String phone, String email, Integer gender, String avatar, String createdUser, Date createdTime, String modifiedUser, Date modifiedTime, Integer role, String name, Integer age) {
+    public User(Integer id, String username, String password, String salt, Integer isDelete, String phone, String email, Integer gender, String avatar, String createdUser, Date createdTime, String modifiedUser, Date modifiedTime, Integer role, String name, Integer age, String nation, BigInteger card, String education, Integer jnum, Integer deptId, String deptName) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -40,6 +47,12 @@ public class User {
         this.role = role;
         this.name = name;
         this.age = age;
+        this.nation = nation;
+        this.card = card;
+        this.education = education;
+        this.jnum = jnum;
+        this.deptId = deptId;
+        this.deptName = deptName;
     }
 
     @Override
@@ -61,23 +74,13 @@ public class User {
                 ", role=" + role +
                 ", name='" + name + '\'' +
                 ", age=" + age +
+                ", nation='" + nation + '\'' +
+                ", card=" + card +
+                ", education='" + education + '\'' +
+                ", jnum=" + jnum +
+                ", deptId=" + deptId +
+                ", deptName='" + deptName + '\'' +
                 '}';
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
     }
 
     public Integer getId() {
@@ -190,5 +193,69 @@ public class User {
 
     public void setRole(Integer role) {
         this.role = role;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public String getNation() {
+        return nation;
+    }
+
+    public void setNation(String nation) {
+        this.nation = nation;
+    }
+
+    public BigInteger getCard() {
+        return card;
+    }
+
+    public void setCard(BigInteger card) {
+        this.card = card;
+    }
+
+    public String getEducation() {
+        return education;
+    }
+
+    public void setEducation(String education) {
+        this.education = education;
+    }
+
+    public Integer getJnum() {
+        return jnum;
+    }
+
+    public void setJnum(Integer jnum) {
+        this.jnum = jnum;
+    }
+
+    public Integer getDeptId() {
+        return deptId;
+    }
+
+    public void setDeptId(Integer deptId) {
+        this.deptId = deptId;
+    }
+
+    public String getDeptName() {
+        return deptName;
+    }
+
+    public void setDeptName(String deptName) {
+        this.deptName = deptName;
     }
 }

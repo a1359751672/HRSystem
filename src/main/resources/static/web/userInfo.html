@@ -8,6 +8,7 @@
     <meta name="renderer" content="webkit" />
     <title>人力资源管理系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!--导入核心文件-->
     <script src="../bootstrap3/js/holder.js"></script>
     <script src="../bootstrap3/jquery-1.9.1.min.js"></script>
@@ -16,24 +17,61 @@
     <!-- 字体图标 -->
     <link rel="stylesheet" type="text/css" href="../bootstrap3/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../bootstrap3/font-awesome-4.7.0/css/font-awesome.css" />
-    <link rel="stylesheet" type="text/css" href="../css/layout.css" />
-    <link rel="stylesheet" type="text/css" href="../css/top.css" />
-    <link rel="stylesheet" type="text/css" href="../css/footer.css" />
+    <link type="text/css" rel="stylesheet" href="../css/css.css" />
 </head>
 <body>
+<div class="header">
+    <div class="top"> <img class="logo" src="../images/logo.jpg" />
+        <ul class="nav">
+            <li ><a href="index.html">首页</a></li>
+            <li class="seleli"><a href="userInfo.html">个人中心</a></li>
+<!--            <li><a href="merits.html">绩效管理</a></li>-->
+            <li><a href="#">薪酬管理</a></li>
+        </ul>
+    </div>
+</div>
 <div class="panel-body">
     <!--修改资料表单开始-->
     <form class="form-horizontal" role="form">
         <div class="form-group">
-            <label class="col-md-2 control-label">用户名：</label>
+            <label class="col-md-2 control-label">工号：</label>
             <div class="col-md-8">
-                <input type="text" id="infoUsername" class="form-control" value="" readonly="true">
+                <input type="text" id="jnum" class="form-control" value=""readonly="true" >
+                <span class="help-block"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">部门：</label>
+            <div class="col-md-8">
+                <input type="text" id="deptName" class="form-control" value=""readonly="true" >
+                <span class="help-block"></span>
             </div>
         </div>
         <div class="form-group">
             <label class="col-md-2 control-label">姓名：</label>
             <div class="col-md-8">
                 <input type="text" id="name" class="form-control" value=""placeholder="请输入本人姓名" >
+                <span class="help-block"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">民族：</label>
+            <div class="col-md-8">
+                <input type="text" id="nation" class="form-control" value=""placeholder="请输入本人民族" >
+                <span class="help-block"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">银行卡号：</label>
+            <div class="col-md-8">
+                <input type="text" id="card" class="form-control" value=""placeholder="请输入本人银行卡号" >
+                <span class="help-block"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">学历：</label>
+            <div class="col-md-8">
+                <input type="text" id="education" class="form-control" value=""placeholder="请输入本人学历" >
                 <span class="help-block"></span>
             </div>
         </div>

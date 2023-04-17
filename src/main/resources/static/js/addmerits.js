@@ -37,3 +37,18 @@ $(function () {
 
     })
 })
+
+// //    定义验证是否为空方法
+// function checkEmpty(name,msg){
+//     if ($("#"+name).val() ==""){
+//         $("#"+name).parents(".form-group").addClass("has-error").removeClass("has-success");
+//         //    给span标签添加错误提示信息
+//         $("#"+name).next("span").text(msg);
+//         return false;
+//     }else {
+//         $("#"+name).parents(".form-group").removeClass("has-error").addClass("has-success");
+//         //
+//         $("#"+name).next("span").text("");
+//         return true;
+//     }
+// }

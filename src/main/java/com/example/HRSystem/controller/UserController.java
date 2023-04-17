@@ -48,6 +48,7 @@ public class UserController {
         user.setId(u.getId());
         user.setModifiedUser(u.getModifiedUser());
         service.changeUserInfo(u.getUsername(),user);
+        System.out.println(u);
         return JsonResult.getSuccessJR(u);
     }
     @RequestMapping("/findUserInfo")

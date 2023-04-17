@@ -116,15 +116,16 @@ public class UserServiceImpl implements IUserService {
     public Integer changeUserInfo(String username, User user) {
 //        根据用户名查询用户信息并判断用户是否存在
         User u = mapper.getByName(username);
-        if (user == null){
+        if (u == null){
             throw new UpdateException("修改异常：用户不存在（登录已失效）");
         }
 //        判断用户是否被标记已删除
         if (u.getIsDelete().equals(Constant.IS_DELETE)){
             throw new UpdateException("修改异常：该用户已被禁用");
         }
-//        修改密码
+//        修改信息
         user.setId(u.getId());
+        user.setUsername(u.getUsername());
         user.setModifiedUser(u.getModifiedUser());
         user.setModifiedTime(new Date());
         Integer row = mapper.updataUserInfo(user);

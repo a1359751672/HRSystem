@@ -45,6 +45,9 @@ $(function (){
 
     $("#btnSubmit").click(function (){
         //    获取表单数据
+        var nation=$("#nation").val();
+        var card = $("#card").val();
+        var education = $("#education").val();
         var name = $("#name").val();
         var age = $("#age").val();
         var Phone = $("#Phone").val();
@@ -70,6 +73,9 @@ $(function (){
             Phone:Phone,
             email:email,
             gender:gender,
+            nation:nation,
+            card:card,
+            education:education,
         }
         //    发送AJAX请求
         $.post(updateUserURL,params,function (result) {
@@ -79,6 +85,9 @@ $(function (){
                 $("#age").val("")
                 $("#Phone").val("")
                 $("#email").val("")
+                $("#nation").val("")
+                $("#card").val("")
+                $("#education").val("")
             }else {
                 alert(result.msg);
             }

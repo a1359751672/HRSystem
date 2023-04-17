@@ -37,7 +37,11 @@ public class MeritsController {
     @RequestMapping("/list")
     public JsonResult<List<Merits>> meritsList(HttpSession session){
         User user = (User) session.getAttribute("user");
+        if (user==null){
+            return new JsonResult<>(2005,"登录已失效");
+        }
         List<Merits> list = service.findMeritsList(user.getUsername());
+        System.out.println(list);
         return JsonResult.getSuccessJR(list);
     }
 }

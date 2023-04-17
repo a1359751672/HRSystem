@@ -29,21 +29,28 @@ public class MeritsServiceImpl implements IMeritsService {
     public void createdMerits(String username,Merits merits){
 //        查询用户是否登录
         User u = usermapper.getByName(username);
+        Integer did = meritsmapper.getByUid(u.getId()).getDeptId();
         if (u==null){
             throw new InsertException("添加数据失败：未登录，请先登录");
         }
         String name = u.getName();
-        if (merits.getId() == null){
-        merits.setId(null);
-        merits.setName(name);
-            Integer row = meritsmapper.insertMerits(merits);
-            if (row!=1){
-                throw new InsertException("添加数据失败");
-            }
+        if (u.getRole()==0){
+            throw new UpdateException("该用户此没有权限");
         }else {
-            Integer row = meritsmapper.UpdateById(merits);
-            if (row!=1){
-                throw new InsertException("更新数据失败");
+            if (merits.getId() == null){
+                merits.setId(null);
+                merits.setUserId(u.getId());
+                merits.setName(name);
+                merits.setDeptName(meritsmapper.deptByid(did).getName());
+                Integer row = meritsmapper.insertMerits(merits);
+                if (row!=1){
+                    throw new InsertException("添加数据失败");
+                }
+            }else {
+                Integer row = meritsmapper.UpdateById(merits);
+                if (row!=1){
+                    throw new InsertException("更新数据失败");
+                }
             }
         }
     }
@@ -56,14 +63,12 @@ public class MeritsServiceImpl implements IMeritsService {
             throw new InsertException("添加数据失败：未登录，请先登录");
         }
         Integer role = u.getRole();
-        if (role==1){
-            List<Merits> m1 = meritsmapper.getMeritsByUserId();
-            int dept_id = m1.indexOf("dept_id");
-//            Merits dept_name =(Merits) meritsmapper.deptByid(dept_id).getName();
-//            m1.add("dept_name");
-            return m1;
+        if (role==0){
+            List<Merits> m = meritsmapper.getMeritsUserId(u.getId());
+            return m;
         }else {
-            throw new EmptyArgumentException("查询数据异常：数据为空");
+            List<Merits> m = meritsmapper.getMeritsByUserId();
+            return m;
         }
     }
 }

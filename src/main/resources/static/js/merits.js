@@ -2,7 +2,7 @@ var template = "<tr>" +
     "<td>[mdate]</td>" +
     "<td>[name]</td>" +
     "<td>[jnum]</td>" +
-    "<td>[dept_id]</td>" +
+    "<td>[dept_name]</td>" +
     "<td>[att]</td>" +
     "<td>[manner]</td>" +
     "<td>[abi]</td>" +
@@ -18,14 +18,14 @@ $(function (){
 
 //查询用户地址信息
 function listMerits() {
-    $.get(meritsLis, function (result) {
+    axios.get(meritsLis, function (result) {
         if (result.state == 1000) {
             for (var index in result.data) {
                 var addr = result.data[index]
                 var td = template.replace("[mdate]", addr.mdate)
                     .replace("[name]", addr.name)
                     .replace("[jnum]", addr.jnum)
-                    .replace("[dept_id]", addr.dept_id)
+                    .replace("[dept_name]", addr.deptName)
                     .replace("[att]", addr.att)
                     .replace("[manner]", addr.manner)
                     .replace("[abi]", addr.abi)

@@ -5,6 +5,7 @@
 <mapper namespace="com.example.HRSystem.Mapper.MeritsMapper">
     <resultMap id="meritsMap" type="com.example.HRSystem.entity.Merits">
         <id column="id" property="id" />
+        <result column="user_id" property="userId"/>
         <result column="mdate" property="mdate"/>
         <result column="name" property="name"/>
         <result column="jnum" property="jnum"/>
@@ -14,16 +15,17 @@
         <result column="abi" property="abi"/>
         <result column="score" property="score"/>
         <result column="assess" property="assess"/>
+        <result column="dept_name" property="deptName"/>
 
     </resultMap>
 <!--    插入绩效信息-->
     <insert id="insertMerits">
-        insert into h_merits(name,jnum,dept_id,att,manner,abi,mdate)
-        values(#{name},#{jnum},#{deptId},#{att},#{manner},#{abi},#{mdate});
+        insert into h_merits(user_id,name,jnum,dept_id,att,manner,abi,mdate,dept_name)
+        values(#{userId},#{name},#{jnum},#{deptId},#{att},#{manner},#{abi},#{mdate},#{deptName});
     </insert>
     <!--    基于用户id和部门id查询绩效记录-->
-    <select id="getByUidAndDid" resultMap="meritsMap">
-        select * from h_merits where id=#{arg0} and dept_id=#{arg1};
+    <select id="getByUid" resultMap="meritsMap">
+        select * from h_merits where user_id=#{uid};
     </select>
     <!--    基于部门id查询部门信息-->
     <select id="deptByid" resultType="com.example.HRSystem.entity.Dept">
@@ -43,6 +45,10 @@
     </update>
     <!--    管理员查询绩效信息-->
     <select id="getMeritsByUserId" resultMap="meritsMap">
-        select * from h_merits ;
+        select * from h_merits;
+    </select>
+<!--    用户id查询绩效信息-->
+    <select id="getMeritsUserId" resultMap="meritsMap">
+        select * from h_merits where user_id=#{uid};
     </select>
 </mapper>

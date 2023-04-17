@@ -20,7 +20,8 @@ class MeritsMapperTest {
     void insertMerits() {
         Merits m = new Merits();
         m.setId(null);
-        m.setName("第一次测试");
+        m.setUserId(4);
+//        m.setName("第一次测试员");
         m.setJnum(123);
         m.setDeptId(1);
         m.setAtt(50);
@@ -38,13 +39,13 @@ class MeritsMapperTest {
 
     @Test
     void getByUidAndDid() {
-        Merits b = mapper.getByUidAndDid(1,1);
+        Merits b = mapper.getByUid(4);
         System.out.println(b);
     }
 
     @Test
     void updateById() {
-        Merits merits = new Merits(12,null,null,null,10,10,10,new Date(),null,null,null);
+        Merits merits = new Merits(12,null,null,null,10,10,10,new Date(),4,null);
         Integer o = mapper.UpdateById(merits);
         System.out.println("更新成功"+o);
     }
@@ -52,6 +53,12 @@ class MeritsMapperTest {
     @Test
     void getMeritsByUserId() {
         List<Merits> m = mapper.getMeritsByUserId();
+        System.out.println(m);
+    }
+
+    @Test
+    void getMeritsUserId() {
+        List<Merits> m = mapper.getMeritsUserId(4);
         System.out.println(m);
     }
 }
