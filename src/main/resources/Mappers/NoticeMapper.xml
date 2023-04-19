@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.HRSystem.Mapper.NoticeMapper">
+    <resultMap id="noticeMap" type="com.example.HRSystem.entity.Notice">
+        <id column="title" property="title" />
+        <result column="cont" property="cont"/>
+        <result column="user_id" property="userId"/>
+        <result column="created_user" property="createdUser"/>
+        <result column="created_time" property="createdTime"/>
+    </resultMap>
+<!--    插入绩效信息-->
+    <insert id="insertNotice">
+        insert into h_notice (title,cont,user_id,created_user,created_time)
+        values(#{title},#{cont},#{userId},#{createdUser},now());
+    </insert>
+
+    <!--    基于用户id查询发布者-->
+    <select id="getNameByUid" resultType="com.example.HRSystem.entity.User">
+        select  t2.name
+        from
+        h_notice t1
+        join
+        h_user t2
+        on t2.id=t1.user_id
+        where
+        t1.user_id=#{uid};
+    </select>
+</mapper>

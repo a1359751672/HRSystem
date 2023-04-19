@@ -35,13 +35,25 @@
     <select id="getByName" resultMap="userMap">
         select * from h_user where username=#{username};
     </select>
-    <!--    登录时修改个人信息-->
+    <!--    用户登录时修改个人信息-->
     <update id="updataUserInfo">
         update h_user set name=#{name},nation=#{nation},card=#{card},education=#{education},age=#{age},phone=#{phone},email=#{email},gender=#{gender},modified_user=#{modifiedUser},modified_time=#{modifiedTime}
+        where username=#{username};
+    </update>
+    <!--    管理员登录时修改个人信息-->
+    <update id="AupdataUserInfo">
+        update h_user set jnum=#{jnum},dept_id=#{deptId},name=#{name},nation=#{nation},card=#{card},education=#{education},age=#{age},phone=#{phone},email=#{email},gender=#{gender},modified_user=#{modifiedUser},modified_time=#{modifiedTime}
         where username=#{username};
     </update>
 <!--    管理员查看所有用户信息-->
     <select id="getByAdmin" resultMap="userMap">
         select * from h_user;
     </select>
+    <select id="getById" resultMap="userMap">
+        select * from h_user where id=#{id} ;
+    </select>
+    <!--    基于账号密码来修改密码-->
+    <update id="updataPassword">
+        update h_user set password=#{password},modified_user=#{modifiedUser},modified_time=#{modifiedTime} where id=#{id};
+    </update>
 </mapper>

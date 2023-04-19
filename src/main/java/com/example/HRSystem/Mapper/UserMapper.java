@@ -4,6 +4,7 @@ import com.example.HRSystem.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.Date;
 import java.util.List;
 
 @Mapper
@@ -16,6 +17,12 @@ public interface UserMapper {
     //    登录账号时，修改个人信息
     Integer updataUserInfo(User user);
 
-//    管理员查找所有用户信息
+    Integer AupdataUserInfo(User user);
     List<User> getByAdmin();
+
+//    基于用户id查找所有用户信息
+    List<User> getById(Integer id);
+
+    //    根据账号密码相同时，修改密码
+    Integer updataPassword(User user);
 }

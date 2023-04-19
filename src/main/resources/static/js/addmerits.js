@@ -25,8 +25,8 @@ $(function () {
             manner:manner,
             abi:abi,
         }
-        //    发送AJAX请求
-        $.post(meritsUrl,params,function (result) {
+           发送AJAX请求
+        axios.post(meritsUrl,params,function (result) {
             //    处理相应数据
             if (result.state == 1000){ //相应成功状态
                     alert("修改考勤成功");

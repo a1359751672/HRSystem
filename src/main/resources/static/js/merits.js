@@ -18,7 +18,7 @@ $(function (){
 
 //查询用户地址信息
 function listMerits() {
-    axios.get(meritsLis, function (result) {
+    $.get(meritsLis, function (result) {
         if (result.state == 1000) {
             for (var index in result.data) {
                 var addr = result.data[index]

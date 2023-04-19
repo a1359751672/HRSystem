@@ -45,12 +45,14 @@ $(function (){
 
     $("#btnSubmit").click(function (){
         //    获取表单数据
+        var jnum=$("#jnum").val();
+        var dept_id=$("#dept_id").val();
         var nation=$("#nation").val();
         var card = $("#card").val();
         var education = $("#education").val();
         var name = $("#name").val();
         var age = $("#age").val();
-        var Phone = $("#Phone").val();
+        var phone = $("#phone").val();
         var email = $("#email").val();
         var gender =$("input[name='gender']:checked").val();
         if (gender=='男'){
@@ -68,9 +70,11 @@ $(function (){
         //    提交表单
         //    提交参数
         var params={
+            jnum:jnum,
+            dept_id:dept_id,
             name:name,
             age:age,
-            Phone:Phone,
+            phone:phone,
             email:email,
             gender:gender,
             nation:nation,
@@ -81,9 +85,11 @@ $(function (){
         $.post(updateUserURL,params,function (result) {
             if (result.state==1000){
                 alert("修改成功")
+                $("#jnum").val("")
+                $("#deptId").val("")
                 $("#name").val("")
                 $("#age").val("")
-                $("#Phone").val("")
+                $("#phone").val("")
                 $("#email").val("")
                 $("#nation").val("")
                 $("#card").val("")

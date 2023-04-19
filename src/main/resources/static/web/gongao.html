@@ -1,0 +1,1370 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>员工自助系统-员工自助系统</title>
+  <meta name="description" content="汇通科技自助查询打印机能帮助企业实现行政人事信息的发布及查询管理；向员工提供即时的企业文化、管理职责、考勤信息、薪资信息、休假信息、电子签核等gerenxinxi查询及薪资打印">
+  <meta name="keywords" content="员工自助系统,员工自助终端,访客自助终端,自助终端">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="shortcut icon " type="images/x-icon" href="/favicon.ico">
+  <!-- include main css -->
+  <link rel="stylesheet" type="text/css" href="/t/huitong/css/reset.css" />
+  <link rel="stylesheet" type="text/css" href="/t/huitong/css/slick.css" />
+  <link rel="stylesheet" type="text/css" href="/t/huitong/css/animate.css" />
+  <link rel="stylesheet" type="text/css" href="/t/huitong/css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="/t/huitong/css/jquery.mmenu.all.css" />
+  <link rel="stylesheet" type="text/css" href="/t/huitong/css/style.css" />
+
+
+  <script src="/t/huitong/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+  <!--[if lt IE 9]>
+  <script src="/static/js/cdnbootcss/html5shiv.min.js"></script>
+  <script src="/static/js/cdnbootcss/respond.min.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" type="text/css" id="theme_css" css="/site/themes/T-XYS091/css/default.css" />
+  <link rel="shortcut icon" href=data/u16575/public/201706/20170607/2017060718504355378.ico> <link rel="shortcut icon"
+                                                                                                   href=data/u16575/public/201706/20170607/2017060718504355378.ico> <style>.index-liu{display:none}</style>
+  <style>
+    /*.index-service-wrap {
+      display: none;
+    }
+
+    .top-wrap .top .top-right a.eng {
+      margin: 32px 10px 0 3px;
+    }
+
+    .qiye-wrap ul {
+      text-align: center
+    }
+
+    .qiye-wrap ul li {
+      float: none;
+      display: inline-block;
+    }*/
+  </style>
+
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6db5435ad4843f85dfa293e2d7297718";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+  <meta name="360-site-verification" content="1522cb7e154fce7a96c29febcf668d5f" />
+  <script>
+    var _root_ = '';
+  </script>
+  <!-- 用于联系我们百度地图 -->
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=xkVdKu1LG42kVWvSnFalLHg8df0Dl6Y7&s=1">
+  </script>
+  <script type="text/javascript"
+          src="https://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
+  <script type="text/javascript" src="https://developer.baidu.com/map/custom/stylelist.js"></script>
+  <link rel="stylesheet" href="https://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
+
+  <link rel="stylesheet" href="/t/huitong/css/widget-style.css" type="text/css">
+
+
+
+</head>
+
+<body>
+
+<div>
+
+  <div class="top-wrap">
+    <div class="top">
+      <div class="place column" name="header_logo" style='float: left;'>
+        <div class="module" style="">
+
+          <a href="/" class="logo"><img src="/t/huitong/images/2019031218141030410.jpg" title="苏州汇通软件科技有限公司" alt="苏州汇通软件科技有限公司"
+                                        class="vcenter"></a>
+        </div>
+
+      </div>
+      <div class="top-right">
+        <div class="place column" name="header_nav" style='float: left;margin-top: 10px;'>
+          <div class="module" style="">
+
+            <ul>
+
+              <li><a class="nava" href="/" title="首页">首页</a>
+              </li>
+
+              <li><a class="nava " href="/about/"
+                     title="关于我们">关于我们</a>
+                <div class="navv">
+
+
+                  <a href="/gywm/qywh/" title="企业文化">企业文化</a>
+
+
+                </div>
+              </li><li><a class="nava active" href="/product/"
+                          title="产品中心">产品中心</a>
+              <div class="navv">
+
+
+                <a href="/product/hrms/" title="人力资源管理系统">人力资源管理系统</a>
+
+                <a href="/product/iams/" title="智能出入管理系统">智能出入管理系统</a>
+
+                <a href="/product/ams/" title="考勤管理系统">考勤管理系统</a>
+
+                <a href="/product/ess/" title="员工自助系统">员工自助系统</a>
+
+                <a href="/product/bs/" title="生物识别系统">生物识别系统</a>
+
+
+              </div>
+            </li><li><a class="nava " href="/case/"
+                        title="应用案例">应用案例</a>
+              <div class="navv">
+
+
+                <a href="/case/eea/" title="电子电器">电子电器</a>
+
+                <a href="/case/mi/" title="机械行业">机械行业</a>
+
+                <a href="/case/ap/" title="汽车零配件">汽车零配件</a>
+
+                <a href="/case/biom/" title="生物医药">生物医药</a>
+
+                <a href="/case/gc/" title="集团客户">集团客户</a>
+
+                <a href="/case/other/" title="其他行业">其他行业</a>
+
+
+              </div>
+            </li><li><a class="nava " href="/service/pim"
+                        title="技术服务">技术服务</a>
+              <div class="navv">
+
+
+                <a href="/service/pim/" title="项目实施管理">项目实施管理</a>
+
+                <a href="/service/cloud/" title="云服务平台">云服务平台</a>
+
+
+              </div>
+            </li>
+
+              <li><a class="nava " href="/cloud/"
+                     title="合作代理">合作代理</a>
+              </li>
+
+              <li><a class="nava " href="/article/"
+                     title="新闻资讯">新闻资讯</a>
+                <div class="navv">
+
+
+                  <a href="/article/cn/" title="公司新闻">公司新闻</a>
+
+                  <a href="/article/news/" title="行业资讯">行业资讯</a>
+
+                  <a href="/article/qa/" title="产品问答">产品问答</a>
+
+                  <a href="/article/ll/" title="劳动法规">劳动法规</a>
+
+
+                </div>
+              </li>
+              <li><a class="nava " href="/contact/"
+                     title="联系我们">联系我们</a>
+              </li>
+
+
+            </ul>
+          </div>
+
+          <!--响应式-->
+          <nav id="mmenu" style='display:none;'>
+            <ul>
+              <li><a href="/" title="首页" class="mm-selected" style='background: rgba(255, 255, 255, 0.6);'>首页</a>
+              </li>
+
+              <li><a href="/about/" title="关于我们">关于我们</a>
+                <ul>
+
+                  <li>
+                    <a href="/gywm/qywh/" title="企业文化">企业文化</a>
+                  </li>
+
+                </ul>
+              </li><li><a href="/product/" title="产品中心">产品中心</a>
+              <ul>
+
+                <li>
+                  <a href="/product/hrms/" title="人力资源管理系统">人力资源管理系统</a>
+                </li>
+
+                <li>
+                  <a href="/product/iams/" title="智能出入管理系统">智能出入管理系统</a>
+                </li>
+
+                <li>
+                  <a href="/product/ams/" title="考勤管理系统">考勤管理系统</a>
+                </li>
+
+                <li>
+                  <a href="/product/ess/" title="员工自助系统">员工自助系统</a>
+                </li>
+
+                <li>
+                  <a href="/product/bs/" title="生物识别系统">生物识别系统</a>
+                </li>
+
+              </ul>
+            </li><li><a href="/case/" title="应用案例">应用案例</a>
+              <ul>
+
+                <li>
+                  <a href="/case/eea/" title="电子电器">电子电器</a>
+                </li>
+
+                <li>
+                  <a href="/case/mi/" title="机械行业">机械行业</a>
+                </li>
+
+                <li>
+                  <a href="/case/ap/" title="汽车零配件">汽车零配件</a>
+                </li>
+
+                <li>
+                  <a href="/case/biom/" title="生物医药">生物医药</a>
+                </li>
+
+                <li>
+                  <a href="/case/gc/" title="集团客户">集团客户</a>
+                </li>
+
+                <li>
+                  <a href="/case/other/" title="其他行业">其他行业</a>
+                </li>
+
+              </ul>
+            </li><li><a href="/service/pim" title="技术服务">技术服务</a>
+              <ul>
+
+                <li>
+                  <a href="/service/pim/" title="项目实施管理">项目实施管理</a>
+                </li>
+
+                <li>
+                  <a href="/service/cloud/" title="云服务平台">云服务平台</a>
+                </li>
+
+              </ul>
+            </li>
+
+              <li><a href="/cloud/" title="合作代理">合作代理</a>
+              </li>
+              <li><a href="/article/" title="新闻资讯">新闻资讯</a>
+                <ul>
+
+                  <li>
+                    <a href="/article/cn/" title="公司新闻">公司新闻</a>
+                  </li>
+
+                  <li>
+                    <a href="/article/news/" title="行业资讯">行业资讯</a>
+                  </li>
+
+                  <li>
+                    <a href="/article/qa/" title="产品问答">产品问答</a>
+                  </li>
+
+                  <li>
+                    <a href="/article/ll/" title="劳动法规">劳动法规</a>
+                  </li>
+
+                </ul>
+              </li>
+              <li><a href="/contact/" title="联系我们">联系我们</a>
+              </li>
+            </ul>
+          </nav>
+          <script>
+            $(function () {
+              if ($(window).width()) {
+                $("#mmenu").removeAttr("style");
+              }
+            })
+          </script>
+        </div>
+        <a href="#mmenu" class="phone-nav"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span></a>
+        <div class="place column" name="header_tran" style='float: left;'>
+          <div class="module" style="">
+
+            <a title="中文" href="/" class="zhong">中文</a>
+            <a title="EN" href="/en" class="eng">EN</a>
+            <a title="日本語" href="/jp" class="eng">日本語</a>
+            <div class='clear'></div>
+          </div>
+        </div>
+        <div class="pull-right search ">
+          <a href="javascript:;" class="btnss btn-search-max language" id="search-btn">
+            <img src="/t/huitong/images/top-icon.png">
+          </a>
+        </div>
+        <div class="search" id="search">
+          <div class="search-main" id="search-main">
+            <img src="/t/huitong/images/icon-closed.png" alt="" id="search-closed" />
+            <div class="search-container">
+              <div class="search-controller">
+                <form action="/p/search.php">
+                  <input type="search" class="form-control" id="search-text" onkeydown='keyDown(event)' name="q"
+                         placeholder="请输入关键字" />
+                  <!-- <input type="button" value="搜索" id="toSearch" class="btnss" /> -->
+                  <button type="submit" value="搜索" id="toSearch" class="btnss">搜索</button>
+
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="place column" name="banner">
+    <div class="module" style="">
+
+      <div class="nei-banner">
+        <img src="/uploads/190603/1-1Z6031I212C7.jpg" alt="产品中心">
+        <div class="wenzi" style="height: 412px;">
+          <p>
+            <b>PRODUCT CENTER</b><br>
+            <i>产品中心</i>
+          </p>
+        </div>
+      </div>
+      <div class='clear'></div>
+    </div>
+
+  </div>
+  <!--</div>-->
+</div>
+
+<div class="bread-wrap">
+  <p><a href='https://www.sqs.com.cn/'>首页</a> > <a href='/product/'>产品中心</a> > <a href='/product/ess/'>员工自助系统</a></p>
+</div>
+<script>
+  $(function () {
+    $('.bread-wrap p a:last-child').contents().unwrap().wrap('<i />');
+  })
+</script>
+
+
+<div class="product-xq-wrap">
+  <div class="product-xq">
+    <div class="products-in clearfix">
+      <div class="products-img">
+        <div class="products-big">
+          <div class="pro-big"><img class="vcenter" src="/uploads/allimg/190605/1-1Z605160F5.jpg" alt="" /></div>
+        </div>
+        <div class="products-sm">
+
+          <div class="pro-sm"><img class="vcenter" src="/uploads/allimg/190605/1-1Z605160F5.jpg" alt="" /></div>
+
+        </div>
+      </div>
+      <div class="products-wen">
+        <em>员工自助系统</em>
+        员工自助系统是汇通人力资源管理系统的主要模块之一，属于业务应用层面。汇通科技自助查询打印机能帮助企业实现行政人事信息的发布及查询管理；向员工提供即时的企业文化、管理制度、考勤信息、薪资信息、休假信息、电子签核等个人信息查询和薪资打印；系统结合智能触屏设备，方便企业员工特别是产线员工日常操作；搭建企业与员工的互动服务平台，提升员工满意度。
+      </div>
+    </div>
+    <div class="products-cont clearfix">
+      <div class="pro-cont-left">
+        <div class="pro-cont-left-tit">
+          <span class="active">详情</span>
+        </div>
+        <div class="pro-pro-content">
+          <div class="pro-pro-cont" style="display: block;">
+            <style>
+              #main {
+                margin: 0px auto;
+                width: 100%;
+                font-family: Microsoft YaHei
+              }
+
+              ul{
+                margin: 0px;
+              }
+              h1,
+              h2,
+              h3,
+              h4,
+              p,
+              ul {
+                margin-top: 2%;
+                margin-bottom: 2%;
+              }
+
+              ul {
+                margin-left: 2%;
+              }
+
+              p {
+                font-size: 1.5vw;
+              }
+
+              @media screen and (min-width: 1599px) {
+                p {
+                  font-size: 1vw;
+                }
+              }
+
+              li {
+                margin-top: 1%;
+                margin-bottom: 1.2%;
+              }
+
+              iframe {
+                width: 800px;
+                height: 450px;
+                frameborder: 0px;
+              }
+
+              @media screen and (max-width: 600px) {
+                iframe {
+                  width: 250px;
+                  height: 160px;
+                  frameborder: 0px;
+                }
+              }
+
+              #tongdian {
+                position: relative;
+              }
+
+              .biaoti {
+                font-size: 2.5vw;
+                color: #ed5637 !important;
+                text-align: center;
+                margin-top: 40px;
+                margin-bottom: 20px;
+              }
+
+              .xiahua {
+                padding-bottom: 2px;
+                border-bottom: 2px solid #ec6d20;
+              }
+
+              .more {
+                text-align: center;
+                margin-top: 20px;
+              }
+
+              #pk li {
+                width: 49%;
+                float: left;
+              }
+
+              #duibi {
+                position: relative;
+              }
+
+              #yaodian {
+                color: #f2edda;
+                font-size: 25px;
+                font-weight: bold;
+                position: absolute;
+                top: 8%;
+                left: 42%;
+                line-height: 103px;
+                float: left;
+              }
+
+              #htyoushi {
+                color: #5f5d5d;
+                font-size: 20px;
+                position: absolute;
+                top: 9%;
+                left: 6%;
+                line-height: 32px;
+                float: left;
+              }
+
+              #qtyoushi {
+                color: #5f5d5d;
+                font-size: 20px;
+                position: absolute;
+                top: 9%;
+                left: 58%;
+                line-height: 32px;
+                float: left;
+              }
+
+              #tuandui li {
+                display: inline-block;
+                width: 49%;
+                margin-bottom: 1.5vh;
+              }
+
+              @media screen and (max-width: 600px) {
+                #tuandui li {
+                  display: inline-block;
+                  width: 99%;
+                  margin-bottom: 1.5vh;
+                  overflow: hidden;
+                  text-align: center;
+                }
+              }
+
+              #tuandui img {
+                display: inline !important;
+              }
+
+              @media screen and (max-width: 600px) {
+                #tuandui img {
+                  display: inline !important;
+                  width: 150px;
+                }
+              }
+
+              .ren {
+                border: 1px solid #5f5d5d;
+                width: 175px;
+                height: 238px;
+                position: relative;
+                float: left;
+                padding: 10px;
+                display: inline !important;
+              }
+
+              @media screen and (max-width: 600px) {
+                .ren {
+                  border: 1px solid #5f5d5d;
+                  width: 150px;
+                  height: 204px;
+                  position: relative;
+                  float: left;
+                  padding: 10px;
+                  display: inline !important;
+                }
+              }
+
+              .heng {
+                background: url('data/u16575/public/201806/20180612/2018061209381635485.jpg') repeat-x center;
+                width: 100%;
+                height: 10px;
+              }
+
+              .kong {
+              < !-- background: url(width: 100%; height: 5px;) --> h4 {
+                                                                     text-align: center;
+                                                                     padding-bottom: 0px;
+                                                                   }
+
+              #rongyu {
+                position: relative;
+              }
+
+              #rongyubg img {
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                z-index: -1;
+              }
+
+              .clear {
+                clear: both;
+              }
+
+              #xuanchuan {
+                float: left;
+                width: 35%;
+              }
+
+              .juzhong {
+                margin: 0px auto;
+                display: block;
+                text-align: center;
+              }
+
+              .juzhong ul li {
+                list-style: none;
+              }
+
+              #rongyu li {
+                list-style: none;
+                display: inline-block；
+              }
+
+              li {
+                list-style: none;
+              }
+
+              ul {
+                padding-left: 0px;
+              }
+
+              #ULclass li {
+                margin-bottom: 5vh;
+              }
+
+              i {
+                font-color: #333333;
+                font-style: italic;
+                display: inline !important;
+              }
+              .beijing{position:relative;}
+
+            </style>
+
+
+
+
+            <style type="text/css">
+              #main{margin:0px auto; width:90%; text-align:center;}
+              h1h2h3pul{margin-top:2%; margin-bottom:2%;}
+              ul{margin-left:4%;}
+              li{margin-top:1%; margin-bottom:1.2%;list-style-type:none;}
+              h1{color:#ec6d20; font-size: 5vw;}
+              h2{color:#ec6d20; font-size: 2vw;}
+              h3{font-size: 1.5vw;}
+              p{font-size: 1.5vw; color:#212121;}
+              @media screen and (min-width: 1599px) {p{font-size:1.2vw;}}
+              .beijing{position:relative;}
+              .xiahua{ padding-bottom:2px; border-bottom:2px solid #ec6d20;}
+              #chanpin p{color:#212121; font-size: 2vw; text-align: left;}
+              @media screen and (min-width: 1599px) {#chanpin p{font-size:1.6vw;}}
+              #gongneng{font-size: 1.8vw; text-align: left; }
+              @media screen and (min-width: 1599px) {#gongneng{font-size: 1.5vw;}}
+              #yinqin li{width:19%; float:left; margin-left:2.8%; margin-right:2.8%;}
+              #yinqin p{font-size:1vw;}
+              @media screen and (min-width: 1599px){#yinqin p{font-size:0.75vw;}}
+              #pk li{width:49%; float:left;margin-bottom:2%;}
+              #pk p{font-size: 1.6vw;}
+              @media screen and (min-width: 1599px) {#pk p{font-size: 1.2vw;}}
+              #tuandui h4{padding-bottom:4%;}
+              #tuandui li{display:inline-block!important;; width:49%; margin-bottom:1.5vh;}
+              @media screen and (max-width: 600px) {#tuandui li { width:99%; margin-bottom:1.5vh;overflow:hidden; text-align:center;}}
+              #tuandui img{display:inline!important;}
+              @media screen and (max-width: 600px) {#tuandui img {display:inline!important; width:49%;}}
+              #lianxi p{color:#ffffff;}
+              .ren{border: 1px solid #5f5d5d; width:175px; height:238px; position: relative; float:left;padding:10px; display:inline!important;}
+              @media screen and (max-width: 600px) {.ren {border: 1px solid #5f5d5d; width:49%; height:190px; position: relative; float:left;padding:10px; display:inline!important;}}
+              #lianxi{position:absolute;z-index:2;left:12.5%;top:24.5%;color:#fff;}
+              @media screen and (min-width: 1599px){#lianxi{left:11%;top:24.5%;}}
+              #zixun{font-size:2vw;}
+              @media screen and (min-width: 1599px) {#zixun{font-size:1.3vw;}}</style>
+            <div id="main">
+              <div class="beijing">
+                <section>
+                  <section powered-by="xiumi.us">
+                    <section>
+                      <section style="box-sizing: border-box; text-align: justify; font-size: 16px;">
+                        <section powered-by="xiumi.us" style="border-bottom: 1px solid black; margin: 0.5em 0px; line-height: 1.2; position: static; box-sizing: border-box;">
+                          <section class="horizontal-tb" style="display: inline-block; border-bottom: 6px solid rgb(2 86 148); margin-bottom: -1px; border-top-color: rgb(2 86 148); border-right-color: rgb(2 86 148); border-left-color: rgb(2 86 148); font-size: 29px; color: rgb(2 86 148); box-sizing: border-box;">
+                            <p style="margin: 0px; padding: 0px; box-sizing: border-box;">
+                              <span style="color:#025691;"><span style="font-size:22px;"><strong style="box-sizing: border-box;">员工自助</strong></span></span></p>
+                            <p style="margin: 0px; padding: 0px; box-sizing: border-box;">
+                              <span style="color:#025691;"><span style="font-size:22px;"><strong style="box-sizing: border-box;"><span style="box-sizing: border-box;">EMPLOYEE SELF-SERVICE</span></strong></span></span></p>
+                          </section>
+                        </section>
+                        <section powered-by="xiumi.us" style="margin: 0.5em 0px; position: static; box-sizing: border-box;">
+                          <section style="float: left; text-align: right; width: 50%; padding-right: 5px; box-sizing: border-box;">
+                            <section powered-by="xiumi.us" style="position: static; box-sizing: border-box;">
+                              <section style="max-width: 100%; vertical-align: middle; display: inline-block; line-height: 0; box-sizing: border-box;">
+                                <img class="raw-image" data-ratio="1" data-w="1000" src="/uploads/allimg/191105/1-191105120613B6.jpg" style="vertical-align: middle; max-width: 100%; box-sizing: border-box;" /></section>
+                            </section>
+                          </section>
+                          <section class="horizontal-tb" powered-by="xiumi.us" style="line-height: 1.4; box-sizing: border-box;">
+                            <p style="clear: none; margin: 0px; padding: 0px; box-sizing: border-box;">
+                              <br />
+                              <br />
+                              员工自助是汇通人力资源管理套件的主要模块之一，属于业务应用层面。与eHR移动应用互为补充，能帮助企业实现行政人事信息的发布及查询管理。向员工尤其是产线员工提供即时的企业文化、管理制度、考勤信息、薪资信息、休假信息、<a href="https://www.sqs.com.cn/product/hrms/503.html">电子签核</a>等个人信息查询服务。系统还提供问卷调查和新闻中心的功能，让员工更方便快捷的了解企业最新动态，同时向企业反馈信息。系统结合智能触屏设备，方便企业员工特别是产线员工日常操作，搭建企业与员工的互动服务平台，提升员工满意度。</p>
+                          </section>
+                        </section>
+                      </section>
+                    </section>
+                  </section>
+                </section>
+                <section>
+                  <section powered-by="xiumi.us">
+                    <section style="clear: both; box-sizing: border-box;">
+                      &nbsp;</section>
+                  </section>
+                </section>
+                <h2>
+                  <span class="xiahua">功能优势</span></h2>
+                <h2 style="text-align: left;">
+                  &nbsp;</h2>
+                <section style="box-sizing: border-box; text-align: justify; font-size: 16px;">
+                  <section powered-by="xiumi.us" style="position: static; transform: rotate(0deg); -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -o-transform: rotate(0deg); box-sizing: border-box;">
+                    <section class="horizontal-tb" style="box-sizing: border-box;">
+                      <p style="margin: 0px; padding: 0px; box-sizing: border-box;">
+                        <strong style="box-sizing: border-box;">A 个性定制 历史查询</strong></p>
+                      <p style="margin: 0px; padding: 0px; box-sizing: border-box;">
+                        员工自助查询系统自带基础查询功能，可以解决企业常用的人事、考勤、薪资、休假管理数据查询，同时可根据企业不同需要定制查询信息内容。</p>
+                      <p style="margin: 0px; padding: 0px; box-sizing: border-box;">
+                        &nbsp;</p>
+                      <p style="margin: 0px; padding: 0px; box-sizing: border-box;">
+                        <strong style="box-sizing: border-box;">B 数据安全 双重验证</strong></p>
+                      <p style="margin: 0px; padding: 0px; box-sizing: border-box;">
+                        员工自助查询系统基于数据安全考虑提供全面解决方案，从软件密码输入、硬件刷卡到对多种生物识别技术的支持（指纹、静脉、人脸等），全方位构筑安全防护。</p>
+                      <p style="margin: 0px; padding: 0px; box-sizing: border-box;">
+                        &nbsp;</p>
+                      <p style="margin: 0px; padding: 0px; box-sizing: border-box;">
+                        <strong style="box-sizing: border-box;">C 动态宣传 形象生动</strong></p>
+                      <p style="margin: 0px; padding: 0px; box-sizing: border-box;">
+                        员工自助查询系统通过文字、图片、视频等方式全方位展示企业文化、管理制度、最新动态等信息，让员工第一时间得到公司信息，是企业文化内外宣导的最佳平台。</p>
+                      <p style="margin: 0px; padding: 0px; box-sizing: border-box;">
+                        &nbsp;</p>
+                      <p style="margin: 0px; padding: 0px; box-sizing: border-box;">
+                        <strong style="box-sizing: border-box;">D 数据间自由互通</strong></p>
+                      <p style="margin: 0px; padding: 0px; box-sizing: border-box;">
+                        员工自助查询系统无缝对接汇通<a href="https://www.sqs.com.cn/">eHR系统</a>管理后台。对未使用汇通eHR系统的客户，支持Excel数据导入，实现数据间便利、快捷、自由交互。</p>
+                      <p style="margin: 0px; padding: 0px; box-sizing: border-box;">
+                        &nbsp;</p>
+                      <p style="margin: 0px; padding: 0px; box-sizing: border-box;">
+                        <strong style="box-sizing: border-box;">E 软硬件集成化方案</strong></p>
+                      <p style="margin: 0px; padding: 0px; box-sizing: border-box;">
+                        为了便于产线员工也能查询到HR开放的相关信息，我们将员工自助模块、触屏查询设备与打印机集成在一起，员工可直接在公共查询设备通过身份识别后进行查询和打印。</p>
+                      <p style="margin: 0px; padding: 0px; box-sizing: border-box;">
+                        &nbsp;</p>
+                      <p style="margin: 0px; padding: 0px; box-sizing: border-box;">
+                        <strong style="box-sizing: border-box;">F 保密薪资单自助打印</strong></p>
+                      <p style="margin: 0px; padding: 0px; box-sizing: border-box;">
+                        薪资发放期间需要耗费大量的人力、物力在较短的时间段内完成大量的打印发放工作，而该系统能方便、安全、快速、自助的获取并打印保密薪资单，解放人力耗费，降低差错率。</p>
+                      <p style="margin: 0px; padding: 0px; box-sizing: border-box;">
+                        &nbsp;</p>
+                      <p style="margin: 0px; padding: 0px; box-sizing: border-box;">
+                        <strong style="box-sizing: border-box;">G 互动渠道</strong></p>
+                      <p style="margin: 0px; padding: 0px; box-sizing: border-box;">
+                        员工可以在自助机上及时获取公司的新闻资讯，提交建议以及完成调研，成为员工与企业的互动平台，增强与员工的沟通接触。</p>
+                    </section>
+                  </section>
+                </section>
+                <section style="box-sizing: border-box; text-align: justify; font-size: 16px;">
+                  <section class="horizontal-tb" powered-by="xiumi.us" style="box-sizing: border-box;">
+                    <p style="margin: 0px; padding: 0px; box-sizing: border-box;">
+                      &nbsp;</p>
+                  </section>
+                </section>
+                <div id="chanpin" style="position:absolute;z-index:2;left:52%;top:15%;">
+                  <p>
+                    &nbsp;</p>
+                </div>
+              </div>
+              <div class="beijing">
+                <h2>
+                  <span class="xiahua">优势对比</span></h2>
+                <img alt="" src="/uploads/allimg/190614/1-1Z6141514390-L.jpg" width="100%" />
+                <ul id="pk" style="position:absolute;z-index:2;text-align:left;left:5%;top:22%;">
+                  <li>
+                    <p>
+                      1.针对制造型企业需求进行优<br />
+                      化，大量的制造业实施经验</p>
+                  </li>
+                  <li>
+                    <p>
+                      1.产品设计不分行业，不能很<br />
+                      好满足制造业的考勤需求</p>
+                  </li>
+                  <li>
+                    <p>
+                      2.高层、HR、一线员工操作权<br />
+                      限清晰全员调动参与使用</p>
+                  </li>
+                  <li>
+                    <p>
+                      2.只关注到人事部门的操作，<br />
+                      其他员工使用麻烦参与度不高</p>
+                  </li>
+                  <li>
+                    <p>
+                      3.通过大数据分析建立人力资<br />
+                      源模型提供企业决策支持</p>
+                  </li>
+                  <li>
+                    <p>
+                      3.大部分品牌都没有这样的概<br />
+                      念，更别说提供这样的功能</p>
+                  </li>
+                  <li>
+                    <p>
+                      4.20年风雨，产品历经六次迭<br />
+                      代，安全稳定、坚如磐石</p>
+                  </li>
+                  <li>
+                    <p>
+                      4.EHR系统功能复杂，涉及面<br />
+                      广，新兴品牌不稳定BUG多</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="beijing">
+                <h2>
+                  <span class="xiahua">关于汇通</span></h2>
+                <img alt="" src="/uploads/allimg/191030/1-19103016412K47.jpg" /></div>
+              <div class="beijing">
+                <h2>
+                  <span class="xiahua">我们的团队</span></h2>
+                <ul id="tuandui">
+                  <li>
+                    <img alt="徐雪龙" src="/uploads/allimg/190614/1-1Z6141411280-L.jpg" />
+                    <div class="ren">
+                      <h4>
+                        <b>徐雪龙 </b></h4>
+                      <h4>
+                        <i>技术总监 </i></h4>
+                      <span style="overflow:auto;">从事考勤排班管理软件行业18年，积累了大量的项目技术咨询和落地实施经验。追逐于领先的人力资源管理理念及IT信息化技术，专注于产品化需求分析及产品研发 </span></div>
+                  </li>
+                  <li>
+                    <img alt="周薇" src="/uploads/allimg/190614/1-1Z6141413520-L.jpg" />
+                    <div class="ren">
+                      <h4>
+                        <b>周薇 </b></h4>
+                      <h4>
+                        <i>资深方案顾问 </i></h4>
+                      <span style="overflow:auto;">曾任职于知名外资企业，从事人力资源管理工作8年。加入汇通以来积累了大量的员工考勤系统咨询经验，为客户产品选型和业务管理提供了契合的精细化解决方案。 </span></div>
+                  </li>
+                  <li>
+                    <img alt="刘万青" src="/uploads/allimg/190614/1-1Z6141414220-L.jpg" />
+                    <div class="ren">
+                      <h4>
+                        <b>刘万青 </b></h4>
+                      <h4>
+                        <i>项目实施总监 </i></h4>
+                      <span style="overflow:auto;">从事工厂考勤软件项目实施及团队管理12年，累积了丰富的项目实施经验。从业多年，针对不同类型客户满足其需求，帮助数百家企业成功安装部署了考勤管理系统 </span></div>
+                  </li>
+                  <li>
+                    <img alt="王雪华" src="/uploads/allimg/190716/1-1ZG6121311332.jpg" />
+                    <div class="ren">
+                      <h4>
+                        <b>王雪华 </b></h4>
+                      <h4>
+                        <i>项目经理 </i></h4>
+                      <span style="overflow:auto;">PMP项目管理师，项目管理经验丰富。以科学的项目实施方法论为依托，通过良好的沟通、资源协调和管控能力，保障考勤系统的顺利推进和成功验收 </span></div>
+                  </li>
+                </ul>
+              </div>
+              <div class="clear">
+                &nbsp;</div>
+              <div class="beijing">
+                <h2>
+                  <span class="xiahua">我们的荣誉</span></h2>
+                <img alt="" src="/uploads/allimg/190614/1-1Z6141444020-L.jpg" width="100%" /></div>
+              <div class="beijing">
+                <h2>
+                  <span class="xiahua">我们的客户</span></h2>
+                <img alt="我们的客户" src="/uploads/allimg/190614/1-1Z6141415530-L.jpg" width="100%" /></div>
+              <div class="beijing">
+                <h2>
+                  <span class="xiahua">联系我们</span></h2>
+                <img alt="联系智能排班软件厂商" src="/uploads/allimg/190614/1-1Z614151J80-L.jpg" width="100%" /> <img alt="联系智能排班系统厂商" src="/uploads/allimg/190614/1-1Z614151F60-L.png" style="position:absolute;z-index:2;left:16%;top:25%;" width="16%" />
+                <div id="lianxi">
+                  <p id="zixun">
+                    <a href="/contact/" style="font-size:1vw;color:#ffffff;text-decoration:none;" target="_blank"><b>立即咨询</b> </a></p>
+                  <p>
+                    你最多花费两分钟<br />
+                    <br />
+                    你可能拥有的是一款<br />
+                    真正能够帮助自己的<br />
+                    <br />
+                    <strong>人事管理系统</strong></p>
+                </div>
+              </div>
+            </div>
+            <br />
+
+
+
+
+
+
+            <script>
+              window.onload = function () {
+                $(".pro-pro-content").css("padding", "10px");
+              }
+            </script>
+          </div>
+
+        </div>
+
+        <div class="pro-cont-left-tit" style="margin-top: 30px;">
+          <span class="active" style="cursor: default">询价</span>
+        </div>
+
+        <form id="contact-form" onSubmit="return saveIt();" class="fform" action="/p/diy1.php"
+              enctype="multipart/form-data" method="post">
+
+          <input type="hidden" name="action" value="post" />
+          <input type="hidden" name="diyid" value="2" />
+          <input type="hidden" name="do" value="2" />
+          <input type="hidden" name="dede_fields" value="name,text;tel,text;email,text;title,text;content,text" />
+          <input type="hidden" name="dede_fieldshash" value="20a19293267e27b8b3cc2330cd9686fc" />
+
+          <label><input type='text' name='name' id='name' placeholder="请输入您的姓名"><em class="require_name">*</em></label>
+          <label><input type='text' name='tel' id='tel' placeholder="请输入您的电话"><em class="require_phone">*</em></label>
+          <label><input type='text' name='email' id='email' placeholder="请输入您的邮箱"></label>
+          <label><input type='text' name='title' id='title' placeholder="请输入您的标题"><em class="require_title">*</em></label>
+          <label><textarea type='text' name='content' id='content' placeholder="请输入您的内容"></textarea></label>
+          <!-- <div class="yz clearfix">
+              <label><input type="text" placeholder="请输入验证码" name="verify"><em>*</em></label>
+              <div class="yanzheng"> <img src="/login-verify.html" style="cursor:pointer;width: 102px;margin-left: 35%;"
+                  id="verify" alt="" class="vcenter" /></div>
+              <a href="javascript:;" id="change">看不清，换一张</a>
+            </div> -->
+          <!-- <input type="submit" id="message-submit" value="提交"> -->
+          <button type="submit">提交</button>
+        </form>
+
+        <script language="JavaScript" type="text/javascript">
+          function saveIt() {
+            var name = $.trim($("#name").val());
+            var tel = $.trim($("#tel").val());
+            var email = $.trim($("#email").val());
+            var title = $.trim($("#title").val());
+            var content = $.trim($("#content").val());
+
+            if (name == "") {
+              alert('请输入姓名');
+              return false;
+            } else if (tel == "") {
+              alert('请输入电话');
+              return false;
+            }
+            /*else if (email == "") {
+              alert('请输入邮箱');
+              return false;
+            } */
+            else if (title == "") {
+              alert('请输入标题');
+              return false;
+            }
+            /*else if(content == "") {
+              alert('请输入内容');
+              return false;
+            }*/
+
+            var phone = document.getElementById('tel').value;
+            if (!(/^1[34578]\d{9}$/.test(phone))) {
+              alert("手机号码有误，请重填");
+              return false;
+            }
+
+            /*var e = /^[a-zA-Z0-9._%+-]+@(?!.*\.\..*)[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            var flag = eval(e).test(email);
+            if (!flag) {
+              alert("邮箱格式不正确！");
+              return false;
+            }*/
+          }
+
+        </script>
+
+
+        <div class="pre-next">
+          <div>上一个：没有了 </div>
+          <div class="right">下一个：<a href='/product/ess/516.html'>多功能自助查询打印终端</a> </div>
+        </div>
+      </div>
+
+
+      <div class="pro-cont-right">
+        <div class="place column" name="relative_product">
+          <div class="module" style="">
+
+            <em>系统模块</em>
+
+            <div class="xg-ppro">
+
+              <a id="myid515" href="/product/ess/515.html" title="员工自助系统">
+                <div class="xx-ii">
+                  <img src="/uploads/allimg/190605/1-1Z6051605480-L.jpg" class="vcenter" title="员工自助系统">
+                </div>
+                <span>员工自助系统</span>
+              </a>
+              <a id="myid516" href="/product/ess/516.html" title="多功能自助查询打印终端">
+                <div class="xx-ii">
+                  <img src="/uploads/allimg/190605/1-1Z6051609120-L.jpg" class="vcenter" title="多功能自助查询打印终端">
+                </div>
+                <span>多功能自助查询打印终端</span>
+              </a>
+              <a id="myid517" href="/product/ess/517.html" title="自助查询薪资打印终端">
+                <div class="xx-ii">
+                  <img src="/uploads/allimg/190605/1-1Z6051611190-L.jpg" class="vcenter" title="自助查询薪资打印终端">
+                </div>
+                <span>自助查询薪资打印终端</span>
+              </a>
+              <a id="myid518" href="/product/ess/518.html" title="访客自助终端">
+                <div class="xx-ii">
+                  <img src="/uploads/allimg/190605/1-1Z6051615400-L.jpg" class="vcenter" title="访客自助终端">
+                </div>
+                <span>访客自助终端</span>
+              </a>
+
+
+
+            </div>
+
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="xg-news-wrap">
+  <div class="place column" name="footer_news">
+    <div class="module" style="">
+
+      <div class="xg-news clearfix">
+        <div class="xg-news-left">
+          <em>相关新闻</em>
+          <i>NEWS</i>
+        </div>
+        <div class="xg-news-right">
+
+          <a href="/article/news/2951.html" title="人力资源管理系统有哪些">
+            <span>人力资源管理系统有哪些？排行榜是怎样的？</span>
+            <i>2023-03-31</i>
+          </a>
+          <a href="/article/news/2950.html" title="自助访客管理系统助力信">
+            <span>自助访客管理系统助力信息化</span>
+            <i>2023-03-31</i>
+          </a>
+          <a href="/article/ll/2949.html" title="中年危机与人生下半场">
+            <span>中年危机与人生下半场</span>
+            <i>2023-03-30</i>
+          </a>
+          <a href="/article/news/2948.html" title="身份证访客系统特色和应">
+            <span>身份证访客系统特色和应用范围</span>
+            <i>2023-03-30</i>
+          </a>
+          <a href="/article/qa/2947.html" title="hr人力资源系统品牌厂商有">
+            <span>hr人力资源系统品牌厂商有哪些</span>
+            <i>2023-03-29</i>
+          </a>
+
+
+        </div>
+      </div>
+
+
+
+    </div>
+
+
+
+
+
+  </div>
+</div>
+
+
+<div class="footer-nav-wrap">
+  <div class="place column" name="footer_memu">
+    <div class="module" style="">
+
+      <div class="footer-nav clearfix">
+        <a href="/" class="iimga"><img src="/t/huitong/images/footer-home.jpg"></a>
+        <div class="flinss">
+          <a href="/product/hrms/500.html
+" target="_blank" title="ehr" class='yijiyangs'>ehr</a>
+          <a href="/product/hrms/500.html
+" target="_blank" title="人力资源管理系统" class='yijiyangs'>人力资源管理系统</a>
+          <a href="/product/hrms/500.html
+" target="_blank" title="人事管理系统" class='yijiyangs'>人事管理系统</a>
+          <a href="/product/ams/524.html" target="_blank" title="员工考勤系统" class='yijiyangs'>员工考勤系统</a>
+          <a href="/product/ams/524.html" target="_blank" title="考勤管理系统" class='yijiyangs'>考勤管理系统</a>
+          <a href="/product/ams/524.html" target="_blank" title="人事考勤系统" class='yijiyangs'>人事考勤系统</a>
+        </div>
+      </div>
+      <div class='clear'></div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="footer-wrap">
+  <div class="footer clearfix">
+    <div class="footer-phone">
+      <div class="place column" name="footer_home">
+        <div class="module" style="">
+
+          <i>Telephone:</i> <a href="tel:400-070-6900" class="zp" title="400-070-6900"><img
+                src="/t/huitong/images/footer-phone.jpg" />400-070-6900</a>
+          <a href="/link" class="ccont" title="Contact us"><span>Contact
+                  us     </span></a>
+          <div class="g-line">
+          </div>
+          <div class='clear'></div>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="footer-middle">
+      <div class="place column" name="footer_home1">
+        <div class="module" style="">
+
+
+          <i>苏州汇通软件科技有限公司.</i>
+          <p>
+            邮箱：<a href="mailto:lili@sqs.com.cn" title="lili@sqs.com.cn">lili@sqs.com.cn</a><br />
+            电话：<a href="tel:400-070-6900" title="400-070-6900">400-070-6900</a><br/>
+            地址：苏州市吴中区石湖西路188号南京师范大学科技园9楼DE座 <br />
+            微博：<a href="http://weibo.com/versuit" target="_blank" rel="nofollow">http://weibo.com/versuit</a><br/>
+            云服务平台：<a href="http://support.virtualclient.cn" target="_blank"
+                          rel="nofollow">http://support.virtualclient.cn</a>
+          </p>
+          <div class='clear'></div>
+        </div>
+
+      </div>
+    </div>
+    <div class="place column erweis" name="footer_erwei">
+      <div class="module" style="">
+
+        <div class="erwei">
+          <img src="/t/huitong/images/2017060715030310948.png" class="vcenter">
+        </div>
+        <div class='clear'></div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+<div class="footer-link-wrap">
+  <div class="footer-link clearfix">
+    <div class="footer-link-left">
+      <p>
+        Copyright ©<p>
+      苏州汇通软件科技有限公司&nbsp;网站备案号：<a href="http://www.beian.miit.gov.cn" target="_blank"
+                                                  rel="nofollow">苏ICP备11037955号-1</a>&nbsp; &nbsp;苏公网安备<a
+            href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=32050802010368" target="_blank"
+            rel="nofollow">32050802010368</a></p>
+      <br>
+      <script type="text/javascript" src="https://s5.cnzz.com/z_stat.php?id=1277778881&web_id=1277778881"></script>
+      <br /> </p>
+      <div class="place column" name="footer_flink" style='float: left;width: 81px;'>
+        <div class="module" style="margin-bottom:0px;">
+
+          <div class="link">
+            <i>友情链接</i>
+            <div class="link-tt">
+
+
+            </div>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+      <a href="/map" class="mappp" title='站点地图'>站点地图</a>
+    </div>
+  </div>
+</div>
+
+
+
+<!--移动端  Mmenu-->
+<!--Include Js-->
+
+<!-- <script type="text/javascript" src="/t/huitong/js/search.js"></script> -->
+<!--移动端导航-->
+<script src="/t/huitong/js/jquery.mmenu.all.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="/t/huitong/js/public.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="/t/huitong/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script>
+  $(".glyphicon").on("click",$(".mm-navbar .mm-title"),function(){
+    $(this).innerText("菜单");
+  })
+</script>
+
+<!--响应式导航-->
+<script type="text/javascript" src="/t/huitong/js/jquery.mmenu.all.min.js"></script>
+
+
+<!--slick-->
+<script src="/t/huitong/js/slick.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+  $(function () {
+    $('.index-banner').slick({
+      dots: true,
+      autoplay: true,
+      arrows: false,
+      autoplaySpeed: 3000
+    });
+  });
+  $(function () {
+    $('.index-about-wrap').slick({
+      dots: false,
+      autoplay: true,
+      arrows: true,
+      autoplaySpeed: 3000
+    });
+  });
+</script>
+
+<script src="/t/huitong/js/jquery.placeholder.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+  $(function () {
+    $('input, textarea').placeholder();
+  });
+</script>
+<script language="javascript" type="text/javascript" src="/t/huitong/js/js.js"></script>
+<script src="/t/huitong/js/wow.js" type="text/javascript" charset="utf-8"></script>
+
+<script>
+  if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))) {
+    new WOW().init();
+  }
+  document.body.addEventListener('touchstart', function () {});
+</script>
+
+<script src="/t/huitong/js/scrollReveal.js"></script>
+<script>
+  (function () {
+    window.scrollReveal = new scrollReveal({
+      reset: true,
+      move: '50px'
+    });
+  })();
+</script>
+<input type="hidden" class="input-middle" name="theme_css_value" value="" id="theme_css_value" />
+<!-- 分享 -->
+<!--浮动im-->
+<!--浮动留言-->
+<!--浮动视频-->
+<!--手机浮动菜单-->
+<!-- QQ分享 -->
+
+<!-- 是否禁止复制 -->
+
+
+
+<span
+        style="display:none;">W6zlrSNyKharLQNac1FA0HcuyYTYCm0uyMvjx3ePG7EVynzh+rkDNtoqsZ3Parzwi6nuLiLpaJrtw5hxGJweCoPpqNhL6q3E2RCbd3wEkAMxq5vPKxyp8b3kpm5GmITeaKgs701lkxEvPRRpd6LWc6dLBGYyDVJ7hhwgWxR3yAuyrruF4fIMsuPvrbqT3cu+4rgnnVrEqNP2SLLq1Gq4PQ==</span>
+<script src="/t/huitong/js/forlegal.js"></script>
+<!--dsp埋点代码-->
+<!-- online talk -->
+<!-- 底部代码 -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131090894-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-131090894-1');
+</script>
+<script>
+  (function () {
+    var src = (document.location.protocol == "http:") ?
+            "http://js.passport.qihucdn.com/11.0.1.js?f6eae30352b23ea2f3cf6bc38314a775" :
+            "https://jspassport.ssl.qhimg.com/11.0.1.js?f6eae30352b23ea2f3cf6bc38314a775";
+    document.write('<script src="' + src + '" id="sozz"><\/script>');
+  })();
+</script>
+<script type="text/javascript">
+  var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");
+  document.write(unescape("%3Cspan id='cnzz_stat_icon_1273198456'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol +
+          "s22.cnzz.com/z_stat.php%3Fid%3D1273198456%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"
+  ));
+</script>
+
+<script>
+  (function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+<script>
+  (function(){
+    var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+    document.write('<script src="' + src + '" id="sozz"><\/script>');
+  })();
+</script>
+<script>
+  (function(){
+    var src = "https://s.ssl.qhres2.com/ssl/ab77b6ea7f3fbf79.js";
+    document.write('<script src="' + src + '" id="sozz"><\/script>');
+  })();
+</script>
+
+</body>
+
+</html>
+
+<script>
+  var str = window.location.href;
+  $('#myid'+str.substring(str.lastIndexOf("/")+1).replace(".html", "")).hide();
+
+  $(function () {
+    $('.products-big').slick({
+      fade: true,
+      arrows: false,
+      dots: false,
+      focusOnSelect: true,
+      draggable: false,
+      asNavFor: ".products-sm"
+    });
+    $(".products-sm").slick({
+      focusOnSelect: true,
+      slidesToShow: 4,
+      vertical: true,
+      dots: false,
+      arrows: true,
+      asNavFor: ".products-big"
+    });
+  });
+</script>
+
+
+<script src="/t/huitong/js/msgCheck.js"></script>
+
+<script>
+  var msgfield =
+          '{"name":["1","1","\u59d3\u540d"],"tel":["1","1","\u7535\u8bdd"],"email":["0","1","\u90ae\u7bb1"],"title":["1","1","\u6807\u9898"],"content":["0","1","\u5185\u5bb9"]}';
+  var msgfields = $.parseJSON(msgfield);
+  msgCheck.init(msgfields);
+  msgCheck.run();
+</script>

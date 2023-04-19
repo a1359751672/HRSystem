@@ -1,7 +1,9 @@
 package com.example.HRSystem.service.Impl;
 
+import com.example.HRSystem.Mapper.MeritsMapper;
 import com.example.HRSystem.Mapper.UserMapper;
 import com.example.HRSystem.common.Constant;
+import com.example.HRSystem.entity.Merits;
 import com.example.HRSystem.entity.User;
 import com.example.HRSystem.service.IUserService;
 import com.example.HRSystem.service.ex.InsertException;
@@ -14,12 +16,15 @@ import org.springframework.util.DigestUtils;
 import org.springframework.util.StringUtils;
 
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 @Service
 public class UserServiceImpl implements IUserService {
     @Autowired
     UserMapper mapper;
+    @Autowired
+    MeritsMapper meritsmapper;
 
     //    注册功能
     @Override
@@ -128,14 +133,71 @@ public class UserServiceImpl implements IUserService {
         user.setUsername(u.getUsername());
         user.setModifiedUser(u.getModifiedUser());
         user.setModifiedTime(new Date());
-        Integer row = mapper.updataUserInfo(user);
-        if (row!=1){
-            throw new UpdateException("修改异常：修改失败");
-        }
+//        if (u.getRole()==0){
+            Integer row = mapper.updataUserInfo(user);
+            if (row!=1){
+                throw new UpdateException("修改异常：修改失败");
+            }
+//        }
+//        else {
+//            user.setDeptName(meritsmapper.deptByid(u.getId()).getName());
+//            Integer row = mapper.AupdataUserInfo(user);
+//            if (row!=1){
+//                throw new UpdateException("修改异常：修改失败");
+//            }
+//        }
         return null;
     }
 
+    @Override
+    public List<User> findUserList(String username) {
+        //        查询用户是否登录
+        User u = mapper.getByName(username);
+        if (u==null){
+            throw new InsertException("添加数据失败：未登录，请先登录");
+        }
+        Integer role = u.getRole();
+        if (role==0){
+            List<User> m = mapper.getById(u.getId());
+            return m;
+        }else {
+            List<User> m = mapper.getByAdmin();
+            return m;
+        }
+    }
 
+    //修改密码
+    @Override
+    public Integer modifyPassword(String username,String oldPassword,String newPassword){
+//        查询用户信息
+        User user = mapper.getByName(username);
+        if (user==null){
+            throw new UpdateException("修改失败：用户不存在");
+        }
+//        判断用户是否删除
+        if (user.getIsDelete().equals(Constant.IS_DELETE)){
+            throw new UpdateException("修改异常：此用户已被禁用");
+        }
+//        比对新旧密码是否一致
+//        if (oldPassword.equals(newPassword)){
+//            throw new UpdateException("新密码与原密码一致，请重新输入");
+//        }
+//        判断原密码（先加密后比对）是否输入正确
+        String Salt = user.getSalt();
+        oldPassword = getMD5Password(oldPassword,Salt,Constant.MD5_HASH_TIME);
+        if (!oldPassword.equals(user.getPassword())){
+            throw new UpdateException("修改异常：原密码输入有误");
+        }
+//        修改密码为新密码（先加密后修改）
+        newPassword = getMD5Password(newPassword,Salt,Constant.MD5_HASH_TIME);
+        User u = new User();
+        u.setId(user.getId());
+        u.setPassword(newPassword);
+        u.setModifiedTime(new Date());
+        u.setModifiedUser(user.getUsername());
+        Integer row = mapper.updataPassword(u);
+        return row;
+    }
 
     //    对密码进行加密
     /*
