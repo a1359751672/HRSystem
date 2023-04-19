@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>人力资源管理系统</title>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- import Vue before Element -->
+    <script src="https://unpkg.com/vue@2/dist/vue.js"></script>
+    <!-- import JavaScript -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script src="js/axios.min.js"></script>
+    <style>
+        body{
+            margin: 0;
+        }
+        .el-header {
+            background-color: rgba(151, 165, 255, 0.7);
+            color: #333;
+            line-height: 60px;
+        }
+        .el-aside {
+            color: #333;
+        }
+        h1{
+            position: absolute;
+            left: 10px;
+            line-height: 60px;
+            font-size: 32px;
+            top: -15px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <el-container style="height: 500px; border: 1px solid #eee">
+        <el-header style="text-align: right; font-size: 12px">
+            <h1>人力资源管理系统</h1>
+            <el-dropdown>
+                <i class="el-icon-setting" style="margin-right: 15px"></i>
+                <el-dropdown-menu slot="dropdown">
+                    <el-dropdown-item>个人中心</el-dropdown-item>
+                    <el-dropdown-item>
+                        <a href="javascript:void(0)" @click="logout" style="list-style: none;text-decoration: none">退出登录</a>
+                    </el-dropdown-item>
+                </el-dropdown-menu>
+            </el-dropdown>
+            <span>欢迎{{nick}}回来</span>
+        </el-header>
+
+        <el-container>
+            <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
+                <el-menu :default-openeds="['4']" @select="menuChange">
+                    <el-submenu index="4">
+                        <template slot="title"><i class="el-icon-message"></i>用户管理</template>
+                        <el-menu-item-group>
+                            <el-menu-item index="4-1">用户列表</el-menu-item>
+                        </el-menu-item-group>
+                    </el-submenu>
+                </el-menu>
+            </el-aside>
+
+            <el-main>
+                <el-table v-show="index=='4-1'" :data="userArr">
+                    <el-table-column prop="id" label="编号" width="140">
+                    </el-table-column>
+                    <el-table-column prop="username" label="用户名" width="140">
+                    </el-table-column>
+                    <el-table-column prop="nick" label="昵称" width="140">
+                    </el-table-column>
+                </el-table>
+            </el-main>
+        </el-container>
+    </el-container>
+
+<!--    &lt;!&ndash;  抽屉部分,用于添加商品分类，和修改商品分类&ndash;&gt;-->
+<!--    <el-drawer-->
+<!--            title="添加商品分类"-->
+<!--            :visible.sync="drawer"-->
+<!--            direction="ttb">-->
+<!--        <el-form>-->
+<!--            <el-form-item>-->
+<!--                <el-input placeholder="请输入要添加的分类" style="width: 400px" v-model="category.name"></el-input>-->
+<!--                <el-button type="primary" @click="addCategory()">添加分类</el-button>-->
+<!--            </el-form-item>-->
+<!--        </el-form>-->
+<!--    </el-drawer>-->
+<!--    <el-drawer-->
+<!--            title="修改商品分类"-->
+<!--            :visible.sync="drawer1"-->
+<!--            direction="ttb">-->
+<!--        <el-form>-->
+<!--            <el-form-item>-->
+<!--                <el-input placeholder="请输入修改后的分类" style="width: 400px" v-model="category.name"></el-input>-->
+<!--                <el-button type="primary" @click="updateCategory()">修改分类</el-button>-->
+<!--            </el-form-item>-->
+<!--        </el-form>-->
+<!--    </el-drawer>-->
+</div>
+</body>
+<script>
+    let v = new Vue({
+        el: '#app',
+        data: function () {
+            const item = {};
+            return {
+                userArr: [],
+                index: '4-1',
+                // drawer:false,
+                // drawer1:false,
+                // category:{
+                //     id:1,
+                //     name:''
+                // },
+                // nick:""
+            }
+        },
+        created: function () {           //优先加载
+            //加载当前登录对象
+            axios.get("/currentUser").then(function (response){
+                v.nick = response.data
+            })
+            this.loadUser() //加载用户信息
+        },
+        methods: {
+            menuChange(index) {
+                if (index == "1-2") {
+                    v.drawer = true //打开添加分类抽屉弹窗
+                } else if (index == "2-2") {
+                    location.href="uploadBanner.html"
+                } else if (index == "3-2") {
+                    alert("添加商品")
+                } else {
+                    v.index = index
+                }
+
+            },
+            //加载用户信息
+            loadUser() {
+                axios.get("/User/select").then(function (response) {
+                    v.userArr = response.data
+                })
+            },
+            //退出登录
+            logout(){
+                axios.get("/logout").then(function (){
+                    location.href="/login.html"
+                })
+            }
+        }
+    })
+</script>
+</html>
