@@ -130,7 +130,7 @@ public class UserServiceImpl implements IUserService {
         }
 //        修改信息
         user.setId(u.getId());
-        user.setUsername(u.getUsername());
+        user.setUsername(username);
         user.setModifiedUser(u.getModifiedUser());
         user.setModifiedTime(new Date());
 //        if (u.getRole()==0){

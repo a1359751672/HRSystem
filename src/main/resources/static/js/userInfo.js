@@ -35,8 +35,8 @@ $(function (){
     })
 
 //    给手机号码添加失去焦点事件
-    $("#Phone").blur(function (){
-        checkPhone("Phone","电话号码格式有误")
+    $("#phone").blur(function (){
+        checkPhone("phone","电话号码格式有误")
     })
 //    给邮箱添加失去焦点事件
     $("#email").blur(function (){
@@ -45,8 +45,6 @@ $(function (){
 
     $("#btnSubmit").click(function (){
         //    获取表单数据
-        var jnum=$("#jnum").val();
-        var dept_id=$("#dept_id").val();
         var nation=$("#nation").val();
         var card = $("#card").val();
         var education = $("#education").val();
@@ -70,30 +68,26 @@ $(function (){
         //    提交表单
         //    提交参数
         var params={
-            jnum:jnum,
-            dept_id:dept_id,
+            nation:nation,
+            card:card,
+            education:education,
             name:name,
             age:age,
             phone:phone,
             email:email,
             gender:gender,
-            nation:nation,
-            card:card,
-            education:education,
         }
         //    发送AJAX请求
         $.post(updateUserURL,params,function (result) {
             if (result.state==1000){
                 alert("修改成功")
-                $("#jnum").val("")
-                $("#deptId").val("")
+                $("#nation").val("")
+                $("#card").val("")
+                $("#education").val("")
                 $("#name").val("")
                 $("#age").val("")
                 $("#phone").val("")
                 $("#email").val("")
-                $("#nation").val("")
-                $("#card").val("")
-                $("#education").val("")
             }else {
                 alert(result.msg);
             }

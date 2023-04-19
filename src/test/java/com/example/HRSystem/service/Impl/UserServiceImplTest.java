@@ -30,6 +30,7 @@ class UserServiceImplTest {
         User user = new User();
         user.setName("龙");
         user.setNation("汉族");
+        user.setAge(17);
         user.setCard(BigInteger.valueOf(1234651032));
         user.setEducation("高中");
         Integer row = service.changeUserInfo("123456", user);
