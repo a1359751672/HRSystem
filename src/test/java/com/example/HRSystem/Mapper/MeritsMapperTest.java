@@ -61,4 +61,10 @@ class MeritsMapperTest {
         List<Merits> m = mapper.getMeritsUserId(4);
         System.out.println(m);
     }
+
+    @Test
+    void getByUid() {
+        Merits m = mapper.getByUid(4);
+        System.out.println(m);
+    }
 }

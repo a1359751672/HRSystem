@@ -1,6 +1,7 @@
 package com.example.HRSystem.Mapper;
 
 import com.example.HRSystem.entity.Notice;
+import com.example.HRSystem.entity.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -26,7 +27,7 @@ class NoticeMapperTest {
 
     @Test
     void getNameByUid() {
-        String cname = mapper.getNameByUid(4);
+        User cname =mapper.getNameByUid(4);
         System.out.println(cname);
     }
 }

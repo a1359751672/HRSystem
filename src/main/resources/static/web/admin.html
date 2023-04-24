@@ -2,19 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!--edge浏览器H5兼容设置-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--360浏览器H5兼容设置-->
+    <meta name="renderer" content="webkit" />
     <title>人力资源管理系统</title>
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
     <!-- import Vue before Element -->
     <script src="https://unpkg.com/vue@2/dist/vue.js"></script>
     <!-- import JavaScript -->
     <script src="https://unpkg.com/element-ui/lib/index.js"></script>
-    <script src="js/axios.min.js"></script>
+    <script src="../js/axios.min.js"></script>
     <style>
         body{
             margin: 0;
         }
         .el-header {
-            background-color: rgba(151, 165, 255, 0.7);
+            background-color: rgba(151, 160, 255, 0.7);
             color: #333;
             line-height: 60px;
         }
@@ -58,16 +62,58 @@
                         </el-menu-item-group>
                     </el-submenu>
                 </el-menu>
-            </el-aside>
 
+                <el-menu :default-openeds="['3']" @select="menuChange">
+                    <el-submenu index="3">
+                        <template slot="title"><i class="el-icon-message"></i>绩效管理</template>
+                        <el-menu-item-group>
+                            <el-menu-item index="3-1">绩效列表</el-menu-item>
+                        </el-menu-item-group>
+                    </el-submenu>
+                </el-menu>
+
+            </el-aside>
             <el-main>
                 <el-table v-show="index=='4-1'" :data="userArr">
                     <el-table-column prop="id" label="编号" width="140">
                     </el-table-column>
                     <el-table-column prop="username" label="用户名" width="140">
                     </el-table-column>
-                    <el-table-column prop="nick" label="昵称" width="140">
+                    <el-table-column prop="name" label="昵称" width="140"></el-table-column>
+                    <el-table-column prop="nation" label="民族" width="140"></el-table-column>
+                    <el-table-column prop="card" label="银行卡号" width="140"></el-table-column>
+                    <el-table-column prop="education" label="学历" width="140"></el-table-column>
+                    <el-table-column prop="age" label="年龄" width="140"></el-table-column>
+                    <el-table-column prop="phone" label="电话号码" width="140"></el-table-column>
+                    <el-table-column prop="email" label="电子邮箱" width="140"></el-table-column>
+<!--                    <el-table-column  label="操作">-->
+<!--                        &lt;!&ndash;            scope保存遍历到的所有对象,scop.$index当前对象所在数组的下标，scope.row保存遍历到的当行对象&ndash;&gt;-->
+<!--                        <template slot-scope="scope">-->
+<!--                            <el-button>-->
+<!--                                size="mini"-->
+<!--                                @click="goodsEdit(scope.$index, scope.row)">修改</el-button>-->
+<!--                            <el-popconfirm-->
+<!--                                    title="你确定要删除此商品吗？"-->
+<!--                                    @confirm="userDelete(scope.$index, scope.row)">-->
+<!--                                <el-button>-->
+<!--                                    size="mini"-->
+<!--                                    type="danger">删除</el-button>-->
+<!--                            </el-popconfirm>-->
+<!--                        </template>-->
+<!--                    </el-table-column>-->
+                </el-table>
+                <el-table v-show="index=='3-1'" :data="userArr">
+                    <el-table-column prop="id" label="编号" width="140">
                     </el-table-column>
+                    <el-table-column prop="name" label="用户名" width="140">
+                    </el-table-column>
+                    <el-table-column prop="jnum" label="昵称" width="140"></el-table-column>
+                    <el-table-column prop="nation" label="民族" width="140"></el-table-column>
+                    <el-table-column prop="card" label="银行卡号" width="140"></el-table-column>
+                    <el-table-column prop="education" label="学历" width="140"></el-table-column>
+                    <el-table-column prop="age" label="年龄" width="140"></el-table-column>
+                    <el-table-column prop="phone" label="电话号码" width="140"></el-table-column>
+                    <el-table-column prop="email" label="电子邮箱" width="140"></el-table-column>
                 </el-table>
             </el-main>
         </el-container>
@@ -105,6 +151,7 @@
             const item = {};
             return {
                 userArr: [],
+                meritsArr:[],
                 index: '4-1',
                 // drawer:false,
                 // drawer1:false,
@@ -112,13 +159,13 @@
                 //     id:1,
                 //     name:''
                 // },
-                // nick:""
+                nick:""
             }
         },
         created: function () {           //优先加载
             //加载当前登录对象
-            axios.get("/currentUser").then(function (response){
-                v.nick = response.data
+            axios.get("/users/findUserInfo").then(function (response){
+                v.nick = response.data.data.name
             })
             this.loadUser() //加载用户信息
         },
@@ -137,16 +184,27 @@
             },
             //加载用户信息
             loadUser() {
-                axios.get("/User/select").then(function (response) {
-                    v.userArr = response.data
+                axios.get("/users/list").then(function (response) {
+                    v.userArr = response.data.data
                 })
             },
             //退出登录
             logout(){
-                axios.get("/logout").then(function (){
-                    location.href="/login.html"
+                axios.get("/users/logout").then(function (){
+                    location.href="login.html"
                 })
-            }
+            },
+            //删除用户信息
+            userDelete(index,user){
+                axios.get("/users/delete?id="+user.id).then(function (){
+                    v.loadUser() //删除成功后再次加载最新的商品信息
+                })
+            },
+            loadMerits() {
+                axios.get("/merits/list").then(function (response) {
+                    v.meritsArr = response.data.data
+                })
+            },
         }
     })
 </script>

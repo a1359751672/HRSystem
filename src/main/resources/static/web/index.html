@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!--edge浏览器H5兼容设置-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--360浏览器H5兼容设置-->
+    <meta name="renderer" content="webkit" />
     <title>人力资源管理系统</title>
     <link type="text/css" rel="stylesheet" href="../css/css.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,6 +18,7 @@
     <script src="../js/suserInfo.js"></script>
     <script src="../js/modernizr-2.6.2.min.js"></script>
     <script src="../js/respond.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
     <!-- 字体图标 -->
     <link rel="stylesheet" type="text/css" href="../bootstrap3/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../bootstrap3/font-awesome-4.7.0/css/font-awesome.css" />
@@ -23,6 +28,12 @@
     <link rel="stylesheet" type="text/css" href="../css/hwslider.css" />
     <link rel="stylesheet" type="text/css" href="../css/icomoon.css" />
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
+<!--    新闻-->
+    <link href="../css/common.css" rel="stylesheet" type="text/css">
+    <link href="../css/page_pcstyle.css" rel="stylesheet" type="text/css">
+    <link href="../css/page_ipadstyle.css" rel="stylesheet" type="text/css">
+    <link href="../css/page_mobilestyle.css" rel="stylesheet" type="text/css">
+    <link href="../css/iconfont/RjdaoIcon_style.css" rel="stylesheet" type="text/css">
     <style>
         .xg-news-wrap .xg-news {
             width: 95%;
@@ -42,41 +53,40 @@
 <div >
     <div id="header"></div>
 
-    <div class="xg-news-wrap">
-        <div class="place column" name="footer_news">
-            <div class="module" style="">
-                <div class="xg-news clearfix">
-                    <div class="xg-news-left">
-                        <em>相关公告</em>
-                        <i>NEWS</i>
-                    </div>
-                    <div class="xg-news-right">
-
-                        <a href="#" title="人力资源管理系统有哪些">
-                            <span>人力资源管理系统有哪些？排行榜是怎样的？</span>
-                            <i>2023-03-31</i>
-                        </a>
-                        <a href="#" title="自助访客管理系统助力信">
-                            <span>自助访客管理系统助力信息化</span>
-                            <i>2023-03-31</i>
-                        </a>
-                        <a href="#" title="中年危机与人生下半场">
-                            <span>中年危机与人生下半场</span>
-                            <i>2023-03-30</i>
-                        </a>
-                        <a href="#" title="身份证访客系统特色和应">
-                            <span>身份证访客系统特色和应用范围</span>
-                            <i>2023-03-30</i>
-                        </a>
-                        <a href="#" title="hr人力资源系统品牌厂商有">
-                            <span>hr人力资源系统品牌厂商有哪些</span>
-                            <i>2023-03-29</i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div id="tabMenu_content">
+        <!--tab内容 S--->
+        <div class="list block">
+            <a href="" class="item">
+                <span class="info tuw">
+                        	<h2 id="title">{{title}}</h2>
+                            <h3>火影完结大家虽然说总算各有归宿，剧场版也给鸣人的恋爱来一个圆满的结果。可是追了这么多年完结总是心里很空，索性博人传人传来了，填补了大家的空虚。</h3>
+                        </span>
+                <span class="ViceInfo">
+                        	<em>发布日期：2018年05月05日 19:06</em>
+                            <em>阅读数：26</em>
+                            <em>所属分类：相关资讯</em>
+                            <i class="icon-0252"></i>
+                    </span>
+            </a>
+<!--        <div class="list none">-->
+<!--            <a href="" class="item">-->
+<!--                <span class="info tuw">-->
+<!--                        	<h2>冲田杏梨幸福晒婚后孕照，苍井空却怀孕无望，让人忍不住心疼</h2>-->
+<!--                            <h3>关于冲田杏梨和苍井空两人宣布婚讯后，网友们虽然表示担心和不舍，但还是为她们送上了最热忱的祝福。</h3>-->
+<!--                        </span>-->
+<!--                <span class="ViceInfo">-->
+<!--                        	<em>发布日期：2018年05月05日 19:06</em>-->
+<!--                            <em>阅读数：184</em>-->
+<!--                            <em>所属分类：相关资讯</em>-->
+<!--                            <i class="icon-0252"></i>-->
+<!--                    </span>-->
+<!--            </a>-->
+<!--        </div>-->
+        <!--tab内容 E--->
     </div>
+
+
+
 
     <div class="lightModuleOuterContent lightModuleOuterContent319" style="    position: relative;
     top: -50px;">

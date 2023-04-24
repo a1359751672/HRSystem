@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.HRSystem.Mapper.MscoreMapper">
+    <resultMap id="mscoreMap" type="com.example.HRSystem.entity.Mscore">
+        <id column="id" property="id" />
+        <result column="mid" property="mid"/>
+        <result column="score" property="score"/>
+        <result column="evaluate" property="evaluate"/>
+    </resultMap>
+<!--    插入绩效信息-->
+    <insert id="insertMscore">
+        insert into h_mscore(mid,score,evaluate)
+        values(#{mid},#{score},#{evaluate});
+    </insert>
+    <select id="getByMid" resultMap="mscoreMap">
+        select * from h_mscore where mid=#{mid};
+    </select>
+    <select id="getAdminByMid" resultMap="mscoreMap">
+        select * from h_mscore;
+    </select>
+
+</mapper>
